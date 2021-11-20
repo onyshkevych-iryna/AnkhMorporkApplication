@@ -1,0 +1,13 @@
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.exe
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.deps.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.runtimeconfig.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.runtimeconfig.dev.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\netcoreapp3.1\AnkhMorporkApp.pdb
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.AssemblyInfoInputs.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.AssemblyInfo.cs
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.csproj.CoreCompileInputs.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.pdb
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\netcoreapp3.1\AnkhMorporkApp.genruntimeconfig.cache

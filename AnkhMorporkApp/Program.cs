@@ -10,12 +10,16 @@ namespace AnkhMorporkApp
             Console.WriteLine(player);
             while (player.IsAlive==true)
             {
-                GuildOfAssassins guild = new GuildOfAssassins();
-                Assassin assassin = guild.assassins[0];
-                guild.AssassinGetMoney(assassin, player); 
+                //GuildOfAssassins guild = new GuildOfAssassins();
+                //Assassin assassin = guild.assassins[0];
+                //guild.AssassinGetMoney(assassin, player); 
+                //Console.WriteLine(player);
+                GuildOfTheves guildOfTheves = new GuildOfTheves();
+                Thieve thieve = new Thieve();
+                guildOfTheves.ThevesGetMoney(player,thieve);
                 Console.WriteLine(player);
             }
-            
+
         }
     }
 }

@@ -44,7 +44,6 @@ namespace AnkhMorporkApp
                     Console.WriteLine("Game is over. You're killed");
                     return;
                 }
-
                 input = Double.Parse(number);
                 if (input < assassin.MinReward || input > assassin.MaxReward)
                 {

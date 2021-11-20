@@ -16,7 +16,8 @@ namespace AnkhMorporkApp
                 {
                     case 0:
                         GuildOfAssassins guild = new GuildOfAssassins();
-                        Assassin assassin = guild.assassins[0];
+                        int random1 = rnd.Next(0, guild.assassins.Count);
+                        Assassin assassin = guild.assassins[random1];
                         guild.AssassinGetMoney(assassin, player);
                         Console.WriteLine(player);
                         break;

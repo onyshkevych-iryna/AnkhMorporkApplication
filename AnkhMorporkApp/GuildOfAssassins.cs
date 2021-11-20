@@ -42,6 +42,7 @@ namespace AnkhMorporkApp
                 if (number == "skip")
                 {
                     Console.WriteLine("Game is over. You're killed");
+                    player.IsAlive = false;
                     return;
                 }
                 input = Double.Parse(number);

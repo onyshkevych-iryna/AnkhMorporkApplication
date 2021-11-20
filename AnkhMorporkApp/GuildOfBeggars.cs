@@ -4,22 +4,32 @@ using System.Text;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfTheves
+    public class GuildOfBeggars
     {
-        private int NumberOfTheves { get; set; } = 6;
-        public List<Thieve> theves;
+        public Dictionary<string, double> beggars;
 
-        public GuildOfTheves()
+        public GuildOfBeggars()
         {
-            theves = new List<Thieve>(NumberOfTheves);
+            beggars = new Dictionary<string, double>();
+            beggars.Add("Twitchers", 3);
+            beggars.Add("Droolers", 2);
+            beggars.Add("Dribblers", 1);
+            beggars.Add("Mumblers", 1);
+            beggars.Add("Mutterers", 0.9);
+            beggars.Add("Walking-Along-Shouter", 0.8);
+            beggars.Add("Demanders of a Chip", 0.6);
+            beggars.Add("People Who Call Other People Jimmy", 0.5);
+            beggars.Add("People Who Need Eightpence For A Meal", 0.08);
+            beggars.Add("People Who Need Tuppence For A Cup Of Tea", 0.02);
+            beggars.Add("People With Placards Saying \"Why lie ? I need a beer\"", 0);
         }
 
-        public void ThevesGetMoney(Player player, Thieve thieve)
+        public void BeggarGetMoney(Player player, Beggar beggar)
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Skip to skip. Give sum of {thieve.Fee}");
-            if (player.Balance < thieve.Fee)
+            Console.WriteLine($"Skip to skip. Give sum of {beggar.Fee}");
+            if (player.Balance < beggar.Fee)
             {
                 Console.WriteLine("You don't have enough money!");
                 player.IsAlive = false;
@@ -31,12 +41,12 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (number == "skip")
                 {
-                    Console.WriteLine("Game is over. You're killed");
+                    Console.WriteLine("Game is over. You're chased to death");
                     player.IsAlive = false;
                     return;
                 }
                 input = Double.Parse(number);
-                if (input!= thieve.Fee)
+                if (input != beggar.Fee)
                 {
                     Console.WriteLine("Incorrect input! Try again");
                     break;

@@ -11,17 +11,15 @@ namespace AnkhMorporkApp
         public GuildOfFools()
         {
             fools = new Dictionary<string, double>();
-            fools.Add("Twitchers", 3);
-            fools.Add("Droolers", 2);
-            fools.Add("Dribblers", 1);
-            fools.Add("Mumblers", 1);
-            fools.Add("Mutterers", 0.9);
-            fools.Add("Walking-Along-Shouter", 0.8);
-            fools.Add("Demanders of a Chip", 0.6);
-            fools.Add("People Who Call Other People Jimmy", 0.5);
-            fools.Add("People Who Need Eightpence For A Meal", 0.08);
-            fools.Add("People Who Need Tuppence For A Cup Of Tea", 0.02);
-            fools.Add("People With Placards Saying \"Why lie ? I need a beer\"", 0);
+            fools.Add("Muggins", 0.5);
+            fools.Add("Gull", 1);
+            fools.Add("Dupe", 2);
+            fools.Add("Butt", 3);
+            fools.Add("Fool", 5);
+            fools.Add("Tomfool", 6);
+            fools.Add("Stupid Foolp", 7);
+            fools.Add("Arch Fool", 8);
+            fools.Add("Complete Fool", 10);
         }
 
         public void FoolGiveMoney(Player player, Fool fool)

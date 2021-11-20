@@ -18,15 +18,21 @@ namespace AnkhMorporkApp
                 //Thieve thieve = new Thieve();
                 //guildOfTheves.ThevesGetMoney(player,thieve);
                 //Console.WriteLine(player);
-                GuildOfFools guildOfFools = new GuildOfFools();
-                var fools = guildOfFools.fools;
-                var sum = fools["Twitchers"];
+                //GuildOfFools guildOfFools = new GuildOfFools();
+                //var fools = guildOfFools.fools;
+                //var sum = fools["Twitchers"];
+                //var name = "Twitchers";
+                //Fool fool = new Fool(name, sum);
+                //guildOfFools.FoolGiveMoney(player, fool);
+                //Console.WriteLine(player);
+                GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
+                var beggars = guildOfBeggars.beggars;
+                var sum = beggars["Twitchers"];
                 var name = "Twitchers";
-                Fool fool = new Fool(name, sum);
-                guildOfFools.FoolGiveMoney(player, fool);
+                Beggar beggar = new Beggar(name, sum);
+                guildOfBeggars.BeggarGetMoney(player, beggar);
                 Console.WriteLine(player);
             }
-
         }
     }
 }

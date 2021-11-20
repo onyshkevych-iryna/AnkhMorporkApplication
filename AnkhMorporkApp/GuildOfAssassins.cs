@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection.Emit;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace AnkhMorporkApp
 {
@@ -12,16 +9,13 @@ namespace AnkhMorporkApp
 
         public GuildOfAssassins()
         {
-            assassins = new List<Assassin>();
-            Assassin assassin1 = new Assassin("Assassin1", 15, 30, true);
-            Assassin assassin2= new Assassin("Assassin2", 10, 20, false);
-            Assassin assassin3 = new Assassin("Assassin3", 7, 12, true);
-            Assassin assassin4 = new Assassin("Assassin4", 15, 19, false);
-
-            assassins.Add(assassin1);
-            assassins.Add(assassin2);
-            assassins.Add(assassin3);
-            assassins.Add(assassin4);
+            assassins = new List<Assassin>()
+            {
+                new Assassin("Assassin1", 15, 30, true),
+                new Assassin("Assassin2", 10, 20, false),
+                new Assassin("Assassin3", 7, 12, true),
+                new Assassin("Assassin4", 15, 19, false)
+            };
         }
 
         public void AssassinGetMoney(Assassin assassin, Player player)
@@ -35,7 +29,7 @@ namespace AnkhMorporkApp
                 player.IsAlive = false;
                 return;
             }
-            bool validInput = false;
+            var validInput = false;
             do
             {
                 number = Console.ReadLine();

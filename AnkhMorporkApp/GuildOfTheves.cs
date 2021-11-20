@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AnkhMorporkApp
 {
@@ -25,7 +24,7 @@ namespace AnkhMorporkApp
                 player.IsAlive = false;
                 return;
             }
-            bool validInput = false;
+            var validInput = false;
             do
             {
                 number = Console.ReadLine();

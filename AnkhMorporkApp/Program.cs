@@ -9,7 +9,7 @@ namespace AnkhMorporkApp
         {
             Player player = new Player();
             Console.WriteLine(player);
-            while (player.IsAlive==true)
+            while (player.IsAlive)
             {
                 Random rnd = new Random();
                 int random =rnd.Next(0,3);
@@ -50,9 +50,7 @@ namespace AnkhMorporkApp
                         guildOfBeggars.BeggarGetMoney(player, beggar);
                         Console.WriteLine(player);
                         break;
-
                 }
-
             }
         }
     }

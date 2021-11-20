@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AnkhMorporkApp
 {
@@ -22,8 +21,7 @@ namespace AnkhMorporkApp
                 { 8, new Dictionary<string, double>(){{ "People Who Call Other People Jimmy", 0.5 } }},
                 { 9, new Dictionary<string, double>(){{ "People Who Need Eightpence For A Meal", 0.08 } }},
                 { 10, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02} }},
-                { 11, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02 } }},
-
+                { 11, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02 } }}
             };
         }
 
@@ -38,7 +36,7 @@ namespace AnkhMorporkApp
                 player.IsAlive = false;
                 return;
             }
-            bool validInput = false;
+            var validInput = false;
             do
             {
                 number = Console.ReadLine();

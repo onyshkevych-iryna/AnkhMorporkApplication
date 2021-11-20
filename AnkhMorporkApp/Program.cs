@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace AnkhMorporkApp
 {
@@ -30,25 +31,25 @@ namespace AnkhMorporkApp
                     case 2:
                         GuildOfFools guildOfFools = new GuildOfFools();
                         var fools = guildOfFools.fools;
-
-                        var sum = fools["Muggins"];
-                        var name = "Muggins";
-
+                        int random2 = rnd.Next(1, fools.Count);
+                        var dict = fools[random2];
+                        var name = dict.Select(v=>v.Key).Single();
+                        var sum = dict.Select(v => v.Value).Single();
                         Fool fool = new Fool(name, sum);
                         guildOfFools.FoolGiveMoney(player, fool);
                         Console.WriteLine(player);
                         break;
-                    case 3:
-                        GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
-                        var beggars = guildOfBeggars.beggars;
+                    //case 3:
+                    //    GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
+                    //    var beggars = guildOfBeggars.beggars;
 
-                        var sum1 = beggars["Twitchers"];
-                        var name1 = "Twitchers";
+                    //    var sum1 = beggars["Twitchers"];
+                    //    var name1 = "Twitchers";
 
-                        Beggar beggar = new Beggar(name1, sum1);
-                        guildOfBeggars.BeggarGetMoney(player, beggar);
-                        Console.WriteLine(player);
-                        break;
+                    //    Beggar beggar = new Beggar(name1, sum1);
+                    //    guildOfBeggars.BeggarGetMoney(player, beggar);
+                    //    Console.WriteLine(player);
+                    //    break;
 
                 }
 

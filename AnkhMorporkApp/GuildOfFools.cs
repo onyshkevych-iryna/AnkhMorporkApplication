@@ -19,8 +19,8 @@ namespace AnkhMorporkApp
                 { 5, new Dictionary<string, double>(){{ "Fool", 5 } }},
                 { 6, new Dictionary<string, double>(){{ "Tomfool", 6 } }},
                 { 7, new Dictionary<string, double>(){{ "Stupid Fool", 7 } }},
-                { 7, new Dictionary<string, double>(){{ "Arch Fool", 8 } }},
-                { 7, new Dictionary<string, double>(){{ "Complete Fool", 10 } }},
+                { 8, new Dictionary<string, double>(){{ "Arch Fool", 8 } }},
+                { 9, new Dictionary<string, double>(){{ "Complete Fool", 10 } }},
 
             };
             

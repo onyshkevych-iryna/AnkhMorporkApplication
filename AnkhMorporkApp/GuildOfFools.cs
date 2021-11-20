@@ -6,20 +6,24 @@ namespace AnkhMorporkApp
 {
     public class GuildOfFools
     {
-        public Dictionary<string,double> fools;
+        public Dictionary<int, Dictionary<string,double>> fools;
 
         public GuildOfFools()
         {
-            fools = new Dictionary<string, double>();
-            fools.Add("Muggins", 0.5);
-            fools.Add("Gull", 1);
-            fools.Add("Dupe", 2);
-            fools.Add("Butt", 3);
-            fools.Add("Fool", 5);
-            fools.Add("Tomfool", 6);
-            fools.Add("Stupid Foolp", 7);
-            fools.Add("Arch Fool", 8);
-            fools.Add("Complete Fool", 10);
+            fools = new Dictionary<int,Dictionary<string, double>>()
+            {
+                { 1, new Dictionary<string, double>(){{"Muggins", 0.5}}},
+                { 2, new Dictionary<string, double>(){{ "Gull", 1 } }},
+                { 3, new Dictionary<string, double>(){{ "Dupe", 2 } }},
+                { 4, new Dictionary<string, double>(){{ "Butt", 3 } }},
+                { 5, new Dictionary<string, double>(){{ "Fool", 5 } }},
+                { 6, new Dictionary<string, double>(){{ "Tomfool", 6 } }},
+                { 7, new Dictionary<string, double>(){{ "Stupid Fool", 7 } }},
+                { 7, new Dictionary<string, double>(){{ "Arch Fool", 8 } }},
+                { 7, new Dictionary<string, double>(){{ "Complete Fool", 10 } }},
+
+            };
+            
         }
 
         public void FoolGiveMoney(Player player, Fool fool)

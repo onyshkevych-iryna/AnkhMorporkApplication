@@ -30,18 +30,21 @@ namespace AnkhMorporkApp
                     case 2:
                         GuildOfFools guildOfFools = new GuildOfFools();
                         var fools = guildOfFools.fools;
+
                         var sum = fools["Muggins"];
                         var name = "Muggins";
+
                         Fool fool = new Fool(name, sum);
                         guildOfFools.FoolGiveMoney(player, fool);
                         Console.WriteLine(player);
-
                         break;
                     case 3:
                         GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
                         var beggars = guildOfBeggars.beggars;
+
                         var sum1 = beggars["Twitchers"];
                         var name1 = "Twitchers";
+
                         Beggar beggar = new Beggar(name1, sum1);
                         guildOfBeggars.BeggarGetMoney(player, beggar);
                         Console.WriteLine(player);

@@ -49,15 +49,16 @@ namespace AnkhMorporkApp
                 if (input != beggar.Fee)
                 {
                     Console.WriteLine("Incorrect input! Try again");
-                    break;
                 }
-                if (input > player.Balance)
+                else if (input > player.Balance)
                 {
                     Console.WriteLine("Incorrect data! Try again");
-                    break;
                 }
-                player.Balance -= input;
-                validInput = true;
+                else
+                {
+                    player.Balance -= input;
+                    validInput = true;
+                }
             } while (validInput == false);
         }
     }

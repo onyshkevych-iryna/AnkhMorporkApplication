@@ -6,22 +6,25 @@ namespace AnkhMorporkApp
 {
     public class GuildOfBeggars
     {
-        public Dictionary<string, double> beggars;
+        public Dictionary<int, Dictionary<string, double>> beggars;
 
         public GuildOfBeggars()
         {
-            beggars = new Dictionary<string, double>();
-            beggars.Add("Twitchers", 3);
-            beggars.Add("Droolers", 2);
-            beggars.Add("Dribblers", 1);
-            beggars.Add("Mumblers", 1);
-            beggars.Add("Mutterers", 0.9);
-            beggars.Add("Walking-Along-Shouter", 0.8);
-            beggars.Add("Demanders of a Chip", 0.6);
-            beggars.Add("People Who Call Other People Jimmy", 0.5);
-            beggars.Add("People Who Need Eightpence For A Meal", 0.08);
-            beggars.Add("People Who Need Tuppence For A Cup Of Tea", 0.02);
-            beggars.Add("People With Placards Saying \"Why lie ? I need a beer\"", 0);
+            beggars = new Dictionary<int, Dictionary<string, double>>()
+            {
+                { 1, new Dictionary<string, double>(){{ "Twitchers", 3 } }},
+                { 2, new Dictionary<string, double>(){{ "Droolers", 2 } }},
+                { 3, new Dictionary<string, double>(){{ "Dribblers", 1 } }},
+                { 4, new Dictionary<string, double>(){{ "Mumblers", 1 } }},
+                { 5, new Dictionary<string, double>(){{ "Mutterers", 0.9 } }},
+                { 6, new Dictionary<string, double>(){{ "Walking-Along-Shouter", 0.8 } }},
+                { 7, new Dictionary<string, double>(){{ "Demanders of a Chip", 0.6 } }},
+                { 8, new Dictionary<string, double>(){{ "People Who Call Other People Jimmy", 0.5 } }},
+                { 9, new Dictionary<string, double>(){{ "People Who Need Eightpence For A Meal", 0.08 } }},
+                { 10, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02} }},
+                { 11, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02 } }},
+
+            };
         }
 
         public void BeggarGetMoney(Player player, Beggar beggar)

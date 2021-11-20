@@ -39,17 +39,17 @@ namespace AnkhMorporkApp
                         guildOfFools.FoolGiveMoney(player, fool);
                         Console.WriteLine(player);
                         break;
-                    //case 3:
-                    //    GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
-                    //    var beggars = guildOfBeggars.beggars;
-
-                    //    var sum1 = beggars["Twitchers"];
-                    //    var name1 = "Twitchers";
-
-                    //    Beggar beggar = new Beggar(name1, sum1);
-                    //    guildOfBeggars.BeggarGetMoney(player, beggar);
-                    //    Console.WriteLine(player);
-                    //    break;
+                    case 3:
+                        GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
+                        var beggars = guildOfBeggars.beggars;
+                        int random3 = rnd.Next(1, beggars.Count);
+                        var dict1 = beggars[random3];
+                        var name1 = dict1.Select(v => v.Key).Single();
+                        var sum1 = dict1.Select(v => v.Value).Single();
+                        Beggar beggar = new Beggar(name1, sum1);
+                        guildOfBeggars.BeggarGetMoney(player, beggar);
+                        Console.WriteLine(player);
+                        break;
 
                 }
 

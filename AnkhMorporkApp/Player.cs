@@ -28,8 +28,30 @@ namespace AnkhMorporkApp
             this.Balance = this.Balance - amount;
         }
 
-        public void Skip()
+        public bool IsMoneyEnough(double input)
         {
+            if (Balance < input)
+            {
+                Console.WriteLine("You don't have enough money!");
+                IsAlive = false;
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        public bool Skip(string number)
+        {
+            if (number == "s")
+            {
+                Console.WriteLine("Game is over. You're killed");
+                IsAlive = false;
+                return true;
+            }
+
+            return false;
         }
 
         public void Play()

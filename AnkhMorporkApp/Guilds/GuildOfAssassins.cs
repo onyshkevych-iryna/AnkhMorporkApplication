@@ -22,37 +22,38 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Skip to skip. Give money in the range of [{assassin.MinReward}, {assassin.MaxReward}]");
-            if (player.Balance < assassin.MinReward)
-            {
-                Console.WriteLine("You don't have enough money!");
-                player.IsAlive = false;
+            Console.WriteLine($"Enter 's' to skip. Or give money in the range of [{assassin.MinReward}, {assassin.MaxReward}]");
+            if(!player.IsMoneyEnough(assassin.MinReward))
                 return;
-            }
             var validInput = false;
             do
             {
                 number = Console.ReadLine();
-                if (number == "skip")
+                if(player.Skip(number))
+                {return;}
+                if (!Double.TryParse(number, out double result))
                 {
-                    Console.WriteLine("Game is over. You're killed");
-                    player.IsAlive = false;
-                    return;
-                }
-                input = Double.Parse(number);
-                if (input < assassin.MinReward || input > assassin.MaxReward)
-                {
-                    Console.WriteLine("Incorrect input! Try again");
-                }
-                else if (input > player.Balance){
                     Console.WriteLine("Incorrect data! Try again");
                 }
                 else
                 {
-                    player.Balance -= input;
-                    validInput = true;
+                    input = Double.Parse(number);
+                    if (input < assassin.MinReward || input > assassin.MaxReward)
+                    {
+                        Console.WriteLine("Incorrect input! Try again");
+                    }
+                    else if (input > player.Balance)
+                    {
+                        Console.WriteLine("Incorrect data! Try again");
+                    }
+                    else
+                    {
+                        player.Balance -= input;
+                        validInput = true;
+                    }
                 }
-            } while (validInput==false);
+            }
+         while (!validInput);
         }
     }
 }

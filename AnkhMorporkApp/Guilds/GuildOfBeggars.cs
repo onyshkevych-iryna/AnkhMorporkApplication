@@ -29,36 +29,39 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Skip to skip. Give sum of {beggar.Fee}");
-            if (player.Balance < beggar.Fee)
-            {
-                Console.WriteLine("You don't have enough money!");
-                player.IsAlive = false;
+            Console.WriteLine($"Enter 's' to skip. Or give sum of {beggar.Fee}");
+            if (!player.IsMoneyEnough(beggar.Fee))
                 return;
-            }
             var validInput = false;
             do
             {
                 number = Console.ReadLine();
-                if (number == "skip")
+                if (number == "s")
                 {
                     Console.WriteLine("Game is over. You're chased to death");
                     player.IsAlive = false;
                     return;
                 }
-                input = Double.Parse(number);
-                if (input != beggar.Fee)
-                {
-                    Console.WriteLine("Incorrect input! Try again");
-                }
-                else if (input > player.Balance)
+                if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Try again");
                 }
                 else
                 {
-                    player.Balance -= input;
-                    validInput = true;
+                    input = Double.Parse(number);
+                    if (input != beggar.Fee)
+                    {
+                        Console.WriteLine("Incorrect input! Try again");
+                    }
+                    else if (input > player.Balance)
+                    {
+                        Console.WriteLine("Incorrect data! Try again");
+                    }
+                    else
+                    {
+                        player.Balance -= input;
+                        validInput = true;
+                    }
                 }
             } while (validInput == false);
         }

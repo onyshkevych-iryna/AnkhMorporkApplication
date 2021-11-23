@@ -7,7 +7,7 @@ namespace AnkhMorporkApp
 {
     public class GameLogic:IGameLogic
     {
-        public void ZeroCase(Random rnd, Player player)
+        public void Assassins(Random rnd, Player player)
         {
             GuildOfAssassins guild = new GuildOfAssassins();
             int random1 = rnd.Next(0, guild.assassins.Count);
@@ -16,7 +16,7 @@ namespace AnkhMorporkApp
             Console.WriteLine(player);
         }
 
-        public void FirstCase(Random rnd, Player player)
+        public void Theves(Random rnd, Player player)
         {
             GuildOfTheves guildOfTheves = new GuildOfTheves();
             Thieve thieve = new Thieve();
@@ -24,7 +24,7 @@ namespace AnkhMorporkApp
             Console.WriteLine(player);
         }
 
-        public void SecondCase(Random rnd, Player player)
+        public void Fools(Random rnd, Player player)
         {
             GuildOfFools guildOfFools = new GuildOfFools();
             var fools = guildOfFools.fools;
@@ -37,7 +37,7 @@ namespace AnkhMorporkApp
             Console.WriteLine(player);
         }
 
-        public void ThirdCase(Random rnd, Player player)
+        public void Beggars(Random rnd, Player player)
         {
             GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
             var beggars = guildOfBeggars.beggars;

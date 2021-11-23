@@ -17,16 +17,16 @@ namespace AnkhMorporkApp
                 switch (random)
                 {
                     case 0:
-                        gameLogic.ZeroCase(rnd, player);
+                        gameLogic.Assassins(rnd, player);
                         break;
                     case 1:
-                        gameLogic.FirstCase(rnd, player);
+                        gameLogic.Theves(rnd, player);
                         break;
                     case 2:
-                        gameLogic.SecondCase(rnd, player);
+                        gameLogic.Fools(rnd, player);
                         break;
                     case 3:
-                        gameLogic.ThirdCase(rnd, player);
+                        gameLogic.Beggars(rnd, player);
                         break;
                 }
             }

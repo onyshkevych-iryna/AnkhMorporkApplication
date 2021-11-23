@@ -25,31 +25,20 @@ namespace AnkhMorporkApp
             {
                 number = Console.ReadLine();
                 if (player.Skip(number, thieve)) 
-                    return; 
-
+                    return;
                 if (!Double.TryParse(number, out double result))
-                {
                     Console.WriteLine("Incorrect data! Try again");
-                }
                 else
                 {
                     input = Double.Parse(number);
                     if (input != thieve.Fee)
-                    {
                         Console.WriteLine("Incorrect input! Try again");
-                    }
                     else if (input > player.Balance)
-                    {
                         Console.WriteLine("Incorrect data! Try again");
-                    }
                     else
-                    {
-                        player.Balance -= input;
-                        validInput = true;
-                    }
+                        player.GiveMoney(input, ref validInput);
                 }
-            }
-        while (!validInput);
+            } while (!validInput);
         }
     }
 }

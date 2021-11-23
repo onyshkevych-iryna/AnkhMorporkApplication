@@ -18,6 +18,8 @@ namespace AnkhMorporkApp
             };
         }
 
+       
+
         public override void BalanceChange(Player player, Assassin assassin)
         {
             string number = null;
@@ -39,18 +41,11 @@ namespace AnkhMorporkApp
                 {
                     input = Double.Parse(number);
                     if (input < assassin.MinReward || input > assassin.MaxReward)
-                    {
                         Console.WriteLine("Incorrect input! Try again");
-                    }
                     else if (input > player.Balance)
-                    {
                         Console.WriteLine("Incorrect data! Try again");
-                    }
                     else
-                    {
-                        player.Balance -= input;
-                        validInput = true;
-                    }
+                        player.GiveMoney(input, ref validInput);
                 }
             }
          while (!validInput);

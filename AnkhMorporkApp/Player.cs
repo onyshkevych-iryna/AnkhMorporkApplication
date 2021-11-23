@@ -16,16 +16,16 @@ namespace AnkhMorporkApp
             this.Balance = balance;
         }
 
-        public void GetMoney(double amount)
+        public void GetMoney(double amount, ref bool validoutput)
         {
-            this.Balance = this.Balance + amount;
+            this.Balance += amount;
+            validoutput = true;
         }
 
-        public void GiveMoney(double amount)
+        public void GiveMoney(double amount, ref bool validoutput)
         {
-            if(amount> this.Balance)
-                Console.WriteLine("Incorrect data!");
-            this.Balance = this.Balance - amount;
+            this.Balance -= amount;
+            validoutput = true;
         }
 
         public bool IsMoneyEnough(double input)
@@ -62,11 +62,7 @@ namespace AnkhMorporkApp
             }
             return false;
         }
-
-        public void Play()
-        {
-        }
-
+        
         public override string ToString()
         {
             return $"Current balance {this.Balance}";

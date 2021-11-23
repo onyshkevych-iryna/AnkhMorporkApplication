@@ -28,28 +28,19 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-
             Console.WriteLine($"Enter \'s\' to skip or \'j\' to join. You'll earn sum of {fool.Fee}");
             var validInput = false;
             do
             {
                 number = Console.ReadLine();
-
-                if (player.Skip(number,fool))
-                {
+                if (player.Skip(number, fool))
                     validInput = true;
-                }
 
                 else if (number == "j")
-                {
-                    input = fool.Fee;
-                    player.Balance += input;
-                    validInput = true;
-                }
+                    player.GetMoney(fool.Fee, ref validInput);
                 else
-                {
                     Console.WriteLine("Invalid input! Please, try again:");
-                }
+
             } while (!validInput);
         }
     }

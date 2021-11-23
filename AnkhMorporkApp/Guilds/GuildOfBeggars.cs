@@ -39,25 +39,16 @@ namespace AnkhMorporkApp
                 if (player.Skip(number, beggar))
                     return;
                 if (!Double.TryParse(number, out double result))
-                {
                     Console.WriteLine("Incorrect data! Try again");
-                }
                 else
                 {
                     input = Double.Parse(number);
                     if (input != beggar.Fee)
-                    {
                         Console.WriteLine("Incorrect input! Try again");
-                    }
                     else if (input > player.Balance)
-                    {
                         Console.WriteLine("Incorrect data! Try again");
-                    }
                     else
-                    {
-                        player.Balance -= input;
-                        validInput = true;
-                    }
+                        player.GiveMoney(input, ref validInput);
                 }
             } while (validInput == false);
         }

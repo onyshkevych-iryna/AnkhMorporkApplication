@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfAssassins :Guilds
+    public class GuildOfAssassins :Guilds<Assassin>
     {
         public List<Assassin> assassins;
 
@@ -18,7 +18,7 @@ namespace AnkhMorporkApp
             };
         }
 
-        public void AssassinGetMoney(Assassin assassin, Player player)
+        public override void BalanceChange(Player player, Assassin assassin)
         {
             string number = null;
             double input = 0;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfFools
+    public class GuildOfFools: Guilds<Fool>
     {
         public Dictionary<int, Dictionary<string,double>> fools;
 
@@ -22,10 +22,9 @@ namespace AnkhMorporkApp
                 { 9, new Dictionary<string, double>(){{ "Complete Fool", 10 } }},
 
             };
-            
         }
 
-        public void FoolGiveMoney(Player player, Fool fool)
+        public override void BalanceChange(Player player, Fool fool)
         {
             string number = null;
             double input = 0;

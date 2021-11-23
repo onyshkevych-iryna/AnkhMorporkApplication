@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfTheves
+    public class GuildOfTheves : Guilds<Thieve>
     {
         private int NumberOfTheves { get; set; } = 6;
         public List<Thieve> theves;
@@ -13,7 +13,7 @@ namespace AnkhMorporkApp
             theves = new List<Thieve>(NumberOfTheves);
         }
 
-        public void ThevesGetMoney(Player player, Thieve thieve)
+        public override void BalanceChange(Player player, Thieve thieve)
         {
             string number = null;
             double input = 0;

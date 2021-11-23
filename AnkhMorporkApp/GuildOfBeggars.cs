@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfBeggars
+    public class GuildOfBeggars : Guilds<Beggar>
     {
         public Dictionary<int, Dictionary<string, double>> beggars;
 
@@ -25,7 +25,7 @@ namespace AnkhMorporkApp
             };
         }
 
-        public void BeggarGetMoney(Player player, Beggar beggar)
+        public override void BalanceChange(Player player, Beggar beggar)
         {
             string number = null;
             double input = 0;

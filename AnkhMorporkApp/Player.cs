@@ -37,9 +37,7 @@ namespace AnkhMorporkApp
                 return false;
             }
             else
-            {
                 return true;
-            }
         }
 
         public bool Skip<T>(string number, T enemy)
@@ -62,7 +60,7 @@ namespace AnkhMorporkApp
             }
             return false;
         }
-        
+
         public override string ToString()
         {
             return $"Current balance {this.Balance}";

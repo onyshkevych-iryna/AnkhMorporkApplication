@@ -1,6 +1,6 @@
 ﻿namespace AnkhMorporkApp
 {
-    public class Thieve : GuildOfTheves
+    public class Thieve
     {
         public double Fee { get; set; } = 10;
 

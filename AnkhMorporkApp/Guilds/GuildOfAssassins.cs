@@ -18,12 +18,14 @@ namespace AnkhMorporkApp
             };
         }
 
-       
-
         public override void BalanceChange(Player player, Assassin assassin)
         {
             string number = null;
             double input = 0;
+            if (assassin.IsOccupied)
+            {
+                return;
+            }
             Console.WriteLine($"Enter 's' to skip. Or give money in the range of [{assassin.MinReward}, {assassin.MaxReward}]");
             if(!player.IsMoneyEnough(assassin.MinReward))
                 return;
@@ -35,20 +37,17 @@ namespace AnkhMorporkApp
                     return;
                 if (!Double.TryParse(number, out double result))
                 {
-                    Console.WriteLine("Incorrect data! Try again");
+                    Console.WriteLine("Incorrect data! Try again:");
+                    continue;
                 }
+                input = Double.Parse(number);
+                if (input < assassin.MinReward || input > assassin.MaxReward)
+                    Console.WriteLine("Your amount doesn't fit the boundaries! Please, try again:");
+                else if (input > player.Balance)
+                    Console.WriteLine("You don't have enough money! Please, try again:");
                 else
-                {
-                    input = Double.Parse(number);
-                    if (input < assassin.MinReward || input > assassin.MaxReward)
-                        Console.WriteLine("Incorrect input! Try again");
-                    else if (input > player.Balance)
-                        Console.WriteLine("Incorrect data! Try again");
-                    else
-                        player.GiveMoney(input, ref validInput);
-                }
-            }
-         while (!validInput);
+                    player.GiveMoney(input, ref validInput);
+            } while (!validInput);
         }
     }
 }

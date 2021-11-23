@@ -1,7 +1,7 @@
 ﻿
 namespace AnkhMorporkApp
 {
-    public class Fool : GuildOfFools
+    public class Fool 
     {
         public string Practice { get; set; }
         public double Fee { get; set; }

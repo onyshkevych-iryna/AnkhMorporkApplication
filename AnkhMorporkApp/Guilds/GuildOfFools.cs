@@ -35,12 +35,10 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (player.Skip(number, fool))
                     validInput = true;
-
                 else if (number == "j")
                     player.GetMoney(fool.Fee, ref validInput);
                 else
                     Console.WriteLine("Invalid input! Please, try again:");
-
             } while (!validInput);
         }
     }

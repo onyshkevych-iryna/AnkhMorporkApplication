@@ -9,10 +9,9 @@ namespace AnkhMorporkApp
     {
         public void Assassins(Random rnd, Player player)
         {
-            GuildOfAssassins guild = new GuildOfAssassins();
-            int random1 = rnd.Next(0, guild.assassins.Count);
-            Assassin assassin = guild.assassins[random1];
-            guild.BalanceChange(player, assassin);
+            GuildOfAssassins guildOfAssassins = new GuildOfAssassins();
+            Assassin assassin = guildOfAssassins.assassins[rnd.Next(0, guildOfAssassins.assassins.Count)];
+            guildOfAssassins.BalanceChange(player, assassin);
             Console.WriteLine(player);
         }
 
@@ -28,11 +27,8 @@ namespace AnkhMorporkApp
         {
             GuildOfFools guildOfFools = new GuildOfFools();
             var fools = guildOfFools.fools;
-            int random2 = rnd.Next(1, fools.Count);
-            var dict = fools[random2];
-            var name = dict.Select(v => v.Key).Single();
-            var sum = dict.Select(v => v.Value).Single();
-            Fool fool = new Fool(name, sum);
+            var dict = fools[rnd.Next(1, fools.Count)];
+            Fool fool = new Fool(dict.Select(v => v.Key).Single(), dict.Select(v => v.Value).Single());
             guildOfFools.BalanceChange(player, fool);
             Console.WriteLine(player);
         }
@@ -41,11 +37,8 @@ namespace AnkhMorporkApp
         {
             GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
             var beggars = guildOfBeggars.beggars;
-            int random3 = rnd.Next(1, beggars.Count);
-            var dict1 = beggars[random3];
-            var name1 = dict1.Select(v => v.Key).Single();
-            var sum1 = dict1.Select(v => v.Value).Single();
-            Beggar beggar = new Beggar(name1, sum1);
+            var dict1 = beggars[rnd.Next(1, beggars.Count)];
+            Beggar beggar = new Beggar(dict1.Select(v => v.Key).Single(), dict1.Select(v => v.Value).Single());
             guildOfBeggars.BalanceChange(player, beggar);
             Console.WriteLine(player);
         }

@@ -1,0 +1,15 @@
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.exe
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.deps.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.runtimeconfig.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.runtimeconfig.dev.json
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\ref\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\bin\Debug\net5.0\AnkhMorporkApp.pdb
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.AssemblyInfoInputs.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.AssemblyInfo.cs
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.csproj.CoreCompileInputs.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\ref\AnkhMorporkApp.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.pdb
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.genruntimeconfig.cache

@@ -8,6 +8,7 @@ namespace AnkhMorporkApp
         static void Main(string[] args)
         {
             Player player = new Player();
+            IGameLogic gameLogic = new GameLogic();
             Console.WriteLine(player);
             while (player.IsAlive)
             {
@@ -16,39 +17,16 @@ namespace AnkhMorporkApp
                 switch (random)
                 {
                     case 0:
-                        GuildOfAssassins guild = new GuildOfAssassins();
-                        int random1 = rnd.Next(0, guild.assassins.Count);
-                        Assassin assassin = guild.assassins[random1];
-                        guild.AssassinGetMoney(assassin, player);
-                        Console.WriteLine(player);
+                        gameLogic.ZeroCase(rnd, player);
                         break;
                     case 1:
-                        GuildOfTheves guildOfTheves = new GuildOfTheves();
-                        Thieve thieve = new Thieve();
-                        guildOfTheves.ThevesGetMoney(player, thieve);
-                        Console.WriteLine(player);
+                        gameLogic.FirstCase(rnd, player);
                         break;
                     case 2:
-                        GuildOfFools guildOfFools = new GuildOfFools();
-                        var fools = guildOfFools.fools;
-                        int random2 = rnd.Next(1, fools.Count);
-                        var dict = fools[random2];
-                        var name = dict.Select(v=>v.Key).Single();
-                        var sum = dict.Select(v => v.Value).Single();
-                        Fool fool = new Fool(name, sum);
-                        guildOfFools.FoolGiveMoney(player, fool);
-                        Console.WriteLine(player);
+                        gameLogic.SecondCase(rnd, player);
                         break;
                     case 3:
-                        GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
-                        var beggars = guildOfBeggars.beggars;
-                        int random3 = rnd.Next(1, beggars.Count);
-                        var dict1 = beggars[random3];
-                        var name1 = dict1.Select(v => v.Key).Single();
-                        var sum1 = dict1.Select(v => v.Value).Single();
-                        Beggar beggar = new Beggar(name1, sum1);
-                        guildOfBeggars.BeggarGetMoney(player, beggar);
-                        Console.WriteLine(player);
+                        gameLogic.ThirdCase(rnd, player);
                         break;
                 }
             }

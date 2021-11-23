@@ -24,12 +24,8 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if (number == "s")
-                {
-                    Console.WriteLine("Game is over. You're killed");
-                    player.IsAlive = false;
-                    return;
-                }
+                if (player.Skip(number, thieve)) 
+                    return; 
 
                 if (!Double.TryParse(number, out double result))
                 {

@@ -42,15 +42,24 @@ namespace AnkhMorporkApp
             }
         }
 
-        public bool Skip(string number)
+        public bool Skip<T>(string number, T enemy)
         {
-            if (number == "s")
+            if ((number == "s"))
             {
-                Console.WriteLine("Game is over. You're killed");
+                if ((enemy is Assassin) || (enemy is Thieve))
+                {
+                    Console.WriteLine("Game is over. You're killed");
+                }
+                else if (enemy is Beggar)
+                    Console.WriteLine("Game is over. You're chased to death");
                 IsAlive = false;
+                if (enemy is Fool)
+                {
+                    Console.WriteLine("You skipped that fool");
+                    IsAlive = true;
+                }
                 return true;
             }
-
             return false;
         }
 

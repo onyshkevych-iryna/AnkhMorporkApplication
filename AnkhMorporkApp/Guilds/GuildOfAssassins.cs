@@ -29,8 +29,8 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if(player.Skip(number))
-                {return;}
+                if(player.Skip(number,assassin)) 
+                    return;
                 if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Try again");

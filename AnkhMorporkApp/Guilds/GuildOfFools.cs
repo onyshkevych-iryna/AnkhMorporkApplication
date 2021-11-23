@@ -35,13 +35,12 @@ namespace AnkhMorporkApp
             {
                 number = Console.ReadLine();
 
-                if (number == "s")
+                if (player.Skip(number,fool))
                 {
-                    Console.WriteLine("You skipped that fool");
-                    return;
+                    validInput = true;
                 }
 
-                if (number == "j")
+                else if (number == "j")
                 {
                     input = fool.Fee;
                     player.Balance += input;
@@ -49,7 +48,7 @@ namespace AnkhMorporkApp
                 }
                 else
                 {
-                    Console.WriteLine("Invalid input! Try again");
+                    Console.WriteLine("Invalid input! Please, try again:");
                 }
             } while (!validInput);
         }

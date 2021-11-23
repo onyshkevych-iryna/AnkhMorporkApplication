@@ -36,12 +36,8 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if (number == "s")
-                {
-                    Console.WriteLine("Game is over. You're chased to death");
-                    player.IsAlive = false;
+                if (player.Skip(number, beggar))
                     return;
-                }
                 if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Try again");

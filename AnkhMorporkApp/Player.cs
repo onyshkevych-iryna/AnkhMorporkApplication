@@ -45,16 +45,16 @@ namespace AnkhMorporkApp
             {
                 if ((enemy is Assassin) || (enemy is Thieve))
                 {
+                    IsAlive = false;
                     Console.WriteLine("Game is over. You're killed");
                 }
                 else if (enemy is Beggar)
-                    Console.WriteLine("Game is over. You're chased to death");
-                IsAlive = false;
-                if (enemy is Fool)
                 {
-                    Console.WriteLine("You skipped that fool");
-                    IsAlive = true;
+                    IsAlive = false;
+                    Console.WriteLine("Game is over. You're chased to death");
                 }
+                else if (enemy is Fool) 
+                    Console.WriteLine("You skipped that fool");
                 return true;
             }
             return false;

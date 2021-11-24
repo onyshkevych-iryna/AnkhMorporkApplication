@@ -2,7 +2,7 @@
 
 namespace AnkhMorporkApp
 {
-    interface IGameLogic
+    interface IRandomGuild
     {
         public void Assassins(Random rnd, Player player);
         public void Theves(Random rnd, Player player);

@@ -8,7 +8,8 @@ namespace AnkhMorporkApp
         static void Main(string[] args)
         {
             Player player = new Player();
-            IGameLogic gameLogic = new GameLogic();
+            IRandomGuild randomGuild = new RandomGuild();
+            Console.WriteLine("The game started!");
             Console.WriteLine(player);
             while (player.IsAlive)
             {
@@ -17,16 +18,16 @@ namespace AnkhMorporkApp
                 switch (random)
                 {
                     case 0:
-                        gameLogic.Assassins(rnd, player);
+                        randomGuild.Assassins(rnd,player);
                         break;
                     case 1:
-                        gameLogic.Theves(rnd, player);
+                        randomGuild.Theves(rnd,player);
                         break;
                     case 2:
-                        gameLogic.Fools(rnd, player);
+                        randomGuild.Fools(rnd,player);
                         break;
                     case 3:
-                        gameLogic.Beggars(rnd, player);
+                        randomGuild.Beggars(rnd,player);
                         break;
                 }
             }

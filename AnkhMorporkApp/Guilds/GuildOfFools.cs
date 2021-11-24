@@ -33,8 +33,11 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if (player.Skip(number, fool))
+                if (number == "s")
+                {
+                    player.Skip(number, fool);
                     validInput = true;
+                }
                 else if (number == "j")
                     player.GetMoney(fool.Fee, ref validInput);
                 else

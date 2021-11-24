@@ -24,8 +24,11 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if (player.Skip(number, thieve))
+                if (number == "s")
+                {
+                    player.Skip(number, thieve);
                     return;
+                }
                 if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Please, try again:");

@@ -6,12 +6,14 @@ namespace AnkhMorporkApp.Tests
     {
         private Player player;
         private double initialBalance;
+        private string commandToSkip;
 
         [TestInitialize]
         public void SetUp()
         {
             initialBalance = 10;
             player = new Player(initialBalance);
+            commandToSkip = "s";
         }
         
         [DataTestMethod]
@@ -61,63 +63,44 @@ namespace AnkhMorporkApp.Tests
             Assert.IsTrue(valid);
             Assert.AreEqual(newBalance, 8);
         }
-
-        [TestMethod]
-        public void Skip_ShouldReturnFalse()
-        {
-            string number = "l";
-            Assassin assassin = new Assassin("name", 11, 20, false);
-
-            var result = player.Skip(number, assassin);
-
-            Assert.IsFalse(result);
-        }
-
+        
         [TestMethod]
         public void Skip_Assassin_ShouldReturnTrue()
         {
-            string number = "s";
             Assassin assassin = new Assassin("name", 11, 20, false);
 
-            var result = player.Skip(number, assassin);
+            player.Skip(commandToSkip, assassin);
 
-            Assert.IsTrue(result);
             Assert.IsFalse(player.IsAlive);
         }
 
         [TestMethod]
         public void Skip_Beggar_ShouldReturnTrue()
         {
-            string number = "s";
             Beggar beggar = new Beggar("practice", 11);
 
-            var result = player.Skip(number, beggar);
+            player.Skip(commandToSkip, beggar);
 
-            Assert.IsTrue(result);
             Assert.IsFalse(player.IsAlive);
         }
 
         [TestMethod]
         public void Skip_Thieve_ShouldReturnTrue()
         {
-            string number = "s";
             Thieve thieve = new Thieve();
 
-            var result = player.Skip(number, thieve);
+            player.Skip(commandToSkip, thieve);
 
-            Assert.IsTrue(result);
             Assert.IsFalse(player.IsAlive);
         }
 
         [TestMethod]
         public void Skip_Fool_ShouldReturnFalse()
         {
-            string number = "s";
             Fool fool = new Fool("practice", 11);
 
-            var result = player.Skip(number, fool);
+            player.Skip(commandToSkip, fool);
 
-            Assert.IsTrue(result);
             Assert.IsTrue(player.IsAlive);
         }
     }

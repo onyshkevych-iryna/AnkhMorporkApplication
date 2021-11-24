@@ -36,8 +36,11 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if (player.Skip(number, beggar))
+                if (number == "s")
+                {
+                    player.Skip(number, beggar);
                     return;
+                }
                 if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Please, try again:");

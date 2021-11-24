@@ -22,10 +22,6 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            if (assassin.IsOccupied)
-            {
-                return;
-            }
             Console.WriteLine($"Enter 's' to skip. Or give money in the range of [{assassin.MinReward}, {assassin.MaxReward}]");
             if(!player.IsMoneyEnough(assassin.MinReward))
                 return;
@@ -33,8 +29,11 @@ namespace AnkhMorporkApp
             do
             {
                 number = Console.ReadLine();
-                if(player.Skip(number,assassin)) 
+                if (number == "s")
+                {
+                    player.Skip(number, assassin);
                     return;
+                }
                 if (!Double.TryParse(number, out double result))
                 {
                     Console.WriteLine("Incorrect data! Try again:");

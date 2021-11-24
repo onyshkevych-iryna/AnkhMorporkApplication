@@ -13,3 +13,4 @@ C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\Ank
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\ref\AnkhMorporkApp.dll
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.pdb
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.genruntimeconfig.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp\obj\Debug\net5.0\AnkhMorporkApp.csproj.AssemblyReference.cache

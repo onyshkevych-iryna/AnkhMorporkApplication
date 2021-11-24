@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnkhMorporkApp", "AnkhMorporkApp\AnkhMorporkApp.csproj", "{29263FC2-2365-493E-BD2C-02FADB13C314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnkhMorporkApp.Tests", "AnkhMorporkApp.Tests\AnkhMorporkApp.Tests.csproj", "{8EFE7C17-D22C-4D6C-A57A-626490479F79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnkhMorporkApp.Tests", "AnkhMorporkApp.Tests\AnkhMorporkApp.Tests.csproj", "{8EFE7C17-D22C-4D6C-A57A-626490479F79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

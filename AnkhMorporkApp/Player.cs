@@ -36,8 +36,7 @@ namespace AnkhMorporkApp
                 IsAlive = false;
                 return false;
             }
-            else
-                return true;
+            return true;
         }
 
         public bool Skip<T>(string number, T enemy)

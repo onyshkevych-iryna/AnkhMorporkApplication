@@ -18,7 +18,7 @@ namespace AnkhMorporkApp
             string number = null;
             double input = 0;
             Console.WriteLine($"Enter \'s\' to skip. Give sum of {thieve.Fee}");
-            if (!player.IsMoneyEnough(thieve.Fee))
+            if (player.IsOutOfMoney(thieve.Fee))
                 return;
             var validInput = false;
             do
@@ -37,8 +37,8 @@ namespace AnkhMorporkApp
                 input = Double.Parse(number);
                 if (input != thieve.Fee)
                     Console.WriteLine($"The amount isn't equal {thieve.Fee}! Please, try again:");
-                else if (input > player.Balance)
-                    Console.WriteLine("You don't have that amount of money! Please, try again:");
+                else if(!player.EnteredSumIsCorrect(input))
+                    return;
                 else 
                     player.GiveMoney(input, ref validInput);
             } while (!validInput);

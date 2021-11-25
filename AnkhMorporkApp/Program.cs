@@ -14,20 +14,20 @@ namespace AnkhMorporkApp
             while (player.IsAlive)
             {
                 Random rnd = new Random();
-                int random =rnd.Next(0,3);
+                int random =rnd.Next(0,4);
                 switch (random)
                 {
                     case 0:
-                        randomGuild.Assassins(rnd,player);
+                        randomGuild.Assassins(player);
                         break;
                     case 1:
                         randomGuild.Theves(rnd,player);
                         break;
                     case 2:
-                        randomGuild.Fools(rnd,player);
+                        randomGuild.Fools(rnd, player);
                         break;
                     case 3:
-                        randomGuild.Beggars(rnd,player);
+                        randomGuild.Beggars(rnd, player);
                         break;
                 }
             }

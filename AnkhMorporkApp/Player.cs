@@ -26,14 +26,29 @@ namespace AnkhMorporkApp
         {
             this.Balance -= amount;
             validoutput = true;
+            if (this.Balance <= 0)
+            {
+                IsAlive = false;
+                Console.WriteLine("You don't have enough money! Game is over");
+            }
         }
 
-        public bool IsMoneyEnough(double input)
+        public bool IsOutOfMoney(double input)
         {
             if (Balance < input)
             {
                 Console.WriteLine("You don't have enough money! Game is over");
                 IsAlive = false;
+                return true;
+            }
+            return false;
+        }
+
+        public bool EnteredSumIsCorrect(double input)
+        {
+            if (Balance < input)
+            {
+                Console.WriteLine("You don't have that sum of money! Please, try again:");
                 return false;
             }
             return true;

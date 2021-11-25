@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfAssassins :Guilds<Assassin>
+    public class GuildOfAssassins :Guilds<List<Assassin>>
     {
         public List<Assassin> assassins;
 
@@ -18,20 +18,18 @@ namespace AnkhMorporkApp
             };
         }
 
-        public override void BalanceChange(Player player, Assassin assassin)
+        public override void BalanceChange(Player player, List<Assassin> assassins)
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Enter 's' to skip. Or give money in the range of [{assassin.MinReward}, {assassin.MaxReward}]");
-            if(!player.IsMoneyEnough(assassin.MinReward))
-                return;
+            Console.WriteLine($"Enter 's' to skip. Or input sum of money to make a contract");
             var validInput = false;
             do
             {
                 number = Console.ReadLine();
                 if (number == "s")
                 {
-                    player.Skip(number, assassin);
+                    player.Skip(number, assassins);
                     return;
                 }
                 if (!Double.TryParse(number, out double result))
@@ -40,12 +38,25 @@ namespace AnkhMorporkApp
                     continue;
                 }
                 input = Double.Parse(number);
-                if (input < assassin.MinReward || input > assassin.MaxReward)
-                    Console.WriteLine("Your amount doesn't fit the boundaries! Please, try again:");
-                else if (input > player.Balance)
-                    Console.WriteLine("You don't have enough money! Please, try again:");
-                else
-                    player.GiveMoney(input, ref validInput);
+                if (!player.EnteredSumIsCorrect(input))
+                    continue;
+                var count =0;
+                foreach (Assassin ass in assassins)
+                {
+                    if (input >= ass.MinReward && input <= ass.MaxReward && (ass.IsOccupied))
+                    {
+                        Console.WriteLine($"{ass.Name} make a contract with you!");
+                        player.GiveMoney(input, ref validInput);
+                        count++;
+                        break;
+                    }
+                }
+                if (count == 0)
+                {
+                    Console.WriteLine("There is no opportunity to make a contract! Game is over");
+                    player.IsAlive = false;
+                    return;
+                }
             } while (!validInput);
         }
     }

@@ -12,10 +12,8 @@ namespace AnkhMorporkApp
 
         public GuildOfBeggars()
         {
-            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var iconPath = Path.Combine(outPutDirectory, "guildofbeggars.json");
-            string AllText = File.ReadAllText(iconPath);
-            beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(AllText);
+            var text = FileReader.GetText("listOfBeggars.json");
+            beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(text);
         }
 
         public override void BalanceChange(Player player, Beggar beggar)

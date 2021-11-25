@@ -2,6 +2,6 @@
 {
     public abstract class Guilds <T>
     {
-        public abstract void BalanceChange(Player player, T enemy);
+        public abstract void BalanceChange(Player player, T guildMember);
     }
 }

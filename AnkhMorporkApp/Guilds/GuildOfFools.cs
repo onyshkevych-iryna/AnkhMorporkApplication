@@ -12,10 +12,8 @@ namespace AnkhMorporkApp
 
         public GuildOfFools()
         {
-            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var iconPath = Path.Combine(outPutDirectory, "guildoffools.json");
-            string AllText = File.ReadAllText(iconPath);
-                fools = JsonConvert.DeserializeObject< Dictionary<int, Fool>>(AllText);
+            var text = FileReader.GetText("listOfFools.json");
+            fools = JsonConvert.DeserializeObject< Dictionary<int, Fool>>(text);
         }
 
         public override void BalanceChange(Player player, Fool fool)

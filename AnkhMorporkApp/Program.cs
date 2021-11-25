@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 
 namespace AnkhMorporkApp
 {
@@ -14,7 +13,7 @@ namespace AnkhMorporkApp
             while (player.IsAlive)
             {
                 Random rnd = new Random();
-                int random =rnd.Next(0,4);
+                var random =rnd.Next(0,4);
                 switch (random)
                 {
                     case 0:

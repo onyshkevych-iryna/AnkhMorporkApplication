@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
 {
@@ -9,13 +12,8 @@ namespace AnkhMorporkApp
 
         public GuildOfAssassins()
         {
-            assassins = new List<Assassin>()
-            {
-                new Assassin("Assassin1", 15, 30, true),
-                new Assassin("Assassin2", 10, 20, false),
-                new Assassin("Assassin3", 7, 12, true),
-                new Assassin("Assassin4", 15, 19, false)
-            };
+            var text = FileReader.GetText("listOfAssassins.json");
+            assassins = JsonConvert.DeserializeObject<List<Assassin>>(text);
         }
 
         public override void BalanceChange(Player player, List<Assassin> assassins)
@@ -45,7 +43,7 @@ namespace AnkhMorporkApp
                 {
                     if (input >= ass.MinReward && input <= ass.MaxReward && (ass.IsOccupied))
                     {
-                        Console.WriteLine($"{ass.Name} make a contract with you!");
+                        Console.WriteLine($"{ass.Name} made a contract with you!");
                         player.GiveMoney(input, ref validInput);
                         count++;
                         break;

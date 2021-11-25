@@ -5,21 +5,21 @@ namespace AnkhMorporkApp
 {
     public class GuildOfFools: Guilds<Fool>
     {
-        public Dictionary<int, Dictionary<string,double>> fools;
+        public Dictionary<int, Fool> fools;
 
         public GuildOfFools()
         {
-            fools = new Dictionary<int,Dictionary<string, double>>()
+            fools = new Dictionary<int, Fool>()
             {
-                { 1, new Dictionary<string, double>(){{"Muggins", 0.5}}},
-                { 2, new Dictionary<string, double>(){{ "Gull", 1 } }},
-                { 3, new Dictionary<string, double>(){{ "Dupe", 2 } }},
-                { 4, new Dictionary<string, double>(){{ "Butt", 3 } }},
-                { 5, new Dictionary<string, double>(){{ "Fool", 5 } }},
-                { 6, new Dictionary<string, double>(){{ "Tomfool", 6 } }},
-                { 7, new Dictionary<string, double>(){{ "Stupid Fool", 7 } }},
-                { 8, new Dictionary<string, double>(){{ "Arch Fool", 8 } }},
-                { 9, new Dictionary<string, double>(){{ "Complete Fool", 10 } }},
+                { 1, new Fool("Muggins", 0.5)},
+                { 2, new Fool( "Gull", 1  )},
+                { 3, new Fool( "Dupe", 2 )},
+                { 4, new Fool("Butt", 3 )},
+                { 5, new Fool( "Fool", 5 )},
+                { 6, new Fool( "Tomfool", 6 )},
+                { 7, new Fool( "Stupid Fool", 7 )},
+                { 8, new Fool( "Arch Fool", 8 )},
+                { 9, new Fool( "Complete Fool", 10 )}
 
             };
         }

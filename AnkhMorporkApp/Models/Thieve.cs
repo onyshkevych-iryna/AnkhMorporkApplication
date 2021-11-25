@@ -6,7 +6,7 @@
 
         public Thieve(double fee)
         {
-            Fee = fee;
+            this.Fee = fee;
         }
 
         public Thieve()

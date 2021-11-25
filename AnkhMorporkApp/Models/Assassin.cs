@@ -10,10 +10,10 @@ namespace AnkhMorporkApp
 
         public Assassin(string name, double minReward, double maxReward, bool isOccupied)
         {
-            Name = name;
-            MinReward = minReward;
-            MaxReward = maxReward;
-            IsOccupied = isOccupied;
+            this.Name = name;
+            this.MinReward = minReward;
+            this.MaxReward = maxReward;
+            this.IsOccupied = isOccupied;
         }
     }
 }

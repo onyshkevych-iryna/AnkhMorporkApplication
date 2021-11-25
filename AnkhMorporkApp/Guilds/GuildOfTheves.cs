@@ -5,8 +5,8 @@ namespace AnkhMorporkApp
 {
     public class GuildOfTheves : Guilds<Thieve>
     {
-        private int NumberOfTheves { get; set; } = 6;
-        public List<Thieve> theves;
+        public int NumberOfTheves { get; private set; } = 6;
+        private List<Thieve> theves;
 
         public GuildOfTheves()
         {

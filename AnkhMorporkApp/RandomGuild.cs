@@ -28,8 +28,8 @@ namespace AnkhMorporkApp
         {
             GuildOfFools guildOfFools = new GuildOfFools();
             var fools = guildOfFools.fools;
-            var dict = fools[rnd.Next(1, fools.Count+1)];
-            Fool fool = new Fool(dict.Select(v => v.Key).Single(), dict.Select(v => v.Value).Single());
+            var randomFool = fools[rnd.Next(1, fools.Count+1)];
+            Fool fool = new Fool(randomFool.Practice, randomFool.Fee);
             guildOfFools.BalanceChange(player, fool);
             if (player.IsAlive)
                 Console.WriteLine(player);
@@ -39,8 +39,8 @@ namespace AnkhMorporkApp
         {
             GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
             var beggars = guildOfBeggars.beggars;
-            var dict1 = beggars[rnd.Next(1, beggars.Count+1)];
-            Beggar beggar = new Beggar(dict1.Select(v => v.Key).Single(), dict1.Select(v => v.Value).Single());
+            var randomBeggar = beggars[rnd.Next(1, beggars.Count+1)];
+            Beggar beggar = new Beggar(randomBeggar.Practice, randomBeggar.Fee);
             guildOfBeggars.BalanceChange(player, beggar);
             if (player.IsAlive) 
                 Console.WriteLine(player);

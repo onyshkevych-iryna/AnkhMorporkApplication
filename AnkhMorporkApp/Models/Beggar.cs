@@ -8,8 +8,8 @@ namespace AnkhMorporkApp
 
         public Beggar(string practice, double fee)
         {
-            Practice = practice;
-            Fee = fee;
+            this.Practice = practice;
+            this.Fee = fee;
         }
 
         public Beggar()

@@ -5,23 +5,23 @@ namespace AnkhMorporkApp
 {
     public class GuildOfBeggars : Guilds<Beggar>
     {
-        public Dictionary<int, Dictionary<string, double>> beggars;
+        public Dictionary<int, Beggar> beggars;
 
         public GuildOfBeggars()
         {
-            beggars = new Dictionary<int, Dictionary<string, double>>()
+            beggars = new Dictionary<int, Beggar>()
             {
-                { 1, new Dictionary<string, double>(){{ "Twitchers", 3 } }},
-                { 2, new Dictionary<string, double>(){{ "Droolers", 2 } }},
-                { 3, new Dictionary<string, double>(){{ "Dribblers", 1 } }},
-                { 4, new Dictionary<string, double>(){{ "Mumblers", 1 } }},
-                { 5, new Dictionary<string, double>(){{ "Mutterers", 0.9 } }},
-                { 6, new Dictionary<string, double>(){{ "Walking-Along-Shouter", 0.8 } }},
-                { 7, new Dictionary<string, double>(){{ "Demanders of a Chip", 0.6 } }},
-                { 8, new Dictionary<string, double>(){{ "People Who Call Other People Jimmy", 0.5 } }},
-                { 9, new Dictionary<string, double>(){{ "People Who Need Eightpence For A Meal", 0.08 } }},
-                { 10, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02} }},
-                { 11, new Dictionary<string, double>(){{ "People Who Need Tuppence For A Cup Of Tea", 0.02 } }}
+                { 1, new Beggar( "Twitchers", 3 )},
+                { 2, new Beggar("Droolers", 2 )},
+                { 3, new Beggar("Dribblers", 1 )},
+                { 4, new Beggar("Mumblers", 1 )},
+                { 5, new Beggar("Mutterers", 0.9 )},
+                { 6, new Beggar("Walking-Along-Shouter", 0.8 )},
+                { 7, new Beggar("Demanders of a Chip", 0.6 )},
+                { 8, new Beggar("People Who Call Other People Jimmy", 0.5 )},
+                { 9, new Beggar("People Who Need Eightpence For A Meal", 0.08 )},
+                { 10,new Beggar( "People Who Need Tuppence For A Cup Of Tea", 0.02)},
+                { 11,new Beggar("People Who Need Tuppence For A Cup Of Tea", 0.02 )}
             };
         }
 

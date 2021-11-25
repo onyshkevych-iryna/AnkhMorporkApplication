@@ -1,0 +1,42 @@
+{
+  "1": {
+    "Practice": "Twitchers",
+    "Fee": 3
+  },
+  "2": {
+    "Practice": "Droolers",
+    "Fee": 2
+  },
+  "3": {
+    "Practice": "Dribblers",
+    "Fee": 1
+  },
+  "4": {
+    "Practice": "Mumblers",
+    "Fee": 1
+  },
+  "5": {
+    "Practice": "Mutterers",
+    "Fee": 0.9
+  },
+  "6": {
+    "Practice": "Walking-Along-Shouter",
+    "Fee": 0.8
+  },
+  "7": {
+    "Practice": "People Who Call Other People Jimmy",
+    "Fee": 0.6
+  },
+  "9": {
+    "Practice": "People Who Need Eightpence For A Meal",
+    "Fee": 0.08
+  },
+  "10": {
+    "Practice": "People Who Need Tuppence For A Cup Of Tea",
+    "Fee": 0.02
+  },
+  "11": {
+    "Practice": "People With Placards Saying \"Why lie? I need a beer\"",
+    "Fee": 0
+  }
+}

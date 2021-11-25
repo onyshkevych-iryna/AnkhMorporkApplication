@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
 {
@@ -9,20 +12,10 @@ namespace AnkhMorporkApp
 
         public GuildOfBeggars()
         {
-            beggars = new Dictionary<int, Beggar>()
-            {
-                { 1, new Beggar( "Twitchers", 3 )},
-                { 2, new Beggar("Droolers", 2 )},
-                { 3, new Beggar("Dribblers", 1 )},
-                { 4, new Beggar("Mumblers", 1 )},
-                { 5, new Beggar("Mutterers", 0.9 )},
-                { 6, new Beggar("Walking-Along-Shouter", 0.8 )},
-                { 7, new Beggar("Demanders of a Chip", 0.6 )},
-                { 8, new Beggar("People Who Call Other People Jimmy", 0.5 )},
-                { 9, new Beggar("People Who Need Eightpence For A Meal", 0.08 )},
-                { 10,new Beggar( "People Who Need Tuppence For A Cup Of Tea", 0.02)},
-                { 11,new Beggar("People Who Need Tuppence For A Cup Of Tea", 0.02 )}
-            };
+            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var iconPath = Path.Combine(outPutDirectory, "guildofbeggars.json");
+            string AllText = File.ReadAllText(iconPath);
+            beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(AllText);
         }
 
         public override void BalanceChange(Player player, Beggar beggar)

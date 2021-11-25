@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
 {
@@ -9,19 +12,10 @@ namespace AnkhMorporkApp
 
         public GuildOfFools()
         {
-            fools = new Dictionary<int, Fool>()
-            {
-                { 1, new Fool("Muggins", 0.5)},
-                { 2, new Fool( "Gull", 1  )},
-                { 3, new Fool( "Dupe", 2 )},
-                { 4, new Fool("Butt", 3 )},
-                { 5, new Fool( "Fool", 5 )},
-                { 6, new Fool( "Tomfool", 6 )},
-                { 7, new Fool( "Stupid Fool", 7 )},
-                { 8, new Fool( "Arch Fool", 8 )},
-                { 9, new Fool( "Complete Fool", 10 )}
-
-            };
+            var outPutDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var iconPath = Path.Combine(outPutDirectory, "guildoffools.json");
+            string AllText = File.ReadAllText(iconPath);
+                fools = JsonConvert.DeserializeObject< Dictionary<int, Fool>>(AllText);
         }
 
         public override void BalanceChange(Player player, Fool fool)

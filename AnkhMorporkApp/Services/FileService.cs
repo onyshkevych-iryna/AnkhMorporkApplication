@@ -20,7 +20,6 @@ namespace AnkhMorporkApp
                 Console.WriteLine(exception.Message);
             }
             return File.ReadAllText(allPath);
-
         }
     }
 }

@@ -4,25 +4,25 @@ namespace AnkhMorporkApp
 {
     public class Player
     {
-        public double Balance { get; set; } = 100;
+        public decimal Balance { get; set; } = 100;
         public bool IsAlive { get; set; } = true;
 
         public Player()
         {
         }
 
-        public Player(double balance)
+        public Player(decimal balance)
         {
             this.Balance = balance;
         }
 
-        public void GetMoney(double amount, ref bool validoutput)
+        public void GetMoney(decimal amount, ref bool validoutput)
         {
             this.Balance += amount;
             validoutput = true;
         }
 
-        public void GiveMoney(double amount, ref bool validoutput)
+        public void GiveMoney(decimal amount, ref bool validoutput)
         {
             this.Balance -= amount;
             validoutput = true;
@@ -33,7 +33,7 @@ namespace AnkhMorporkApp
             }
         }
 
-        public bool IsOutOfMoney(double input)
+        public bool IsOutOfMoney(decimal input)
         {
             if (Balance < input)
             {
@@ -44,7 +44,7 @@ namespace AnkhMorporkApp
             return false;
         }
 
-        public bool EnteredSumIsCorrect(double input)
+        public bool EnteredSumIsCorrect(decimal input)
         {
             if (Balance < input)
             {

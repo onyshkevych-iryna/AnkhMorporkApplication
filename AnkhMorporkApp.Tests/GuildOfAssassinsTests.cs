@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AnkhMorporkApp.Abstracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 
 namespace AnkhMorporkApp.Tests
 {
     [TestClass]
-    class GuildOfAssassinsTests
+    public class GuildOfAssassinsTests:ConsoleNameRetriever
     {
         private Player player;
-        private double initialBalance;
+        private decimal initialBalance;
         private string commandToSkip;
 
         [TestInitialize]
@@ -21,16 +24,27 @@ namespace AnkhMorporkApp.Tests
             player = new Player(initialBalance);
             commandToSkip = "s";
         }
+        public override string GetNextName()
+        {
+            return commandToSkip;
+        }
 
-        //[DataTestMethod]
-        //[DataRow(2)]
-        //[DataRow(9)]
-        //[DataRow(10)]
-        //public void IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue(double input)
-        //{
-        //    var result = player.IsMoneyEnough(input);
+        [TestMethod]
+        public void IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue()
+        {
+            List<Assassin> assassins = new List<Assassin>()
+            {
+                new Assassin("name", 10, 20, false)
+            };
 
-        //    Assert.IsTrue(result);
-        //}
+            var fake = new Mock<IFileService>();
+
+            fake.Setup(fr => fr.GetText("name")).Returns("");
+            GuildOfAssassins guild = new GuildOfAssassins(fake.Object);
+            GetNextName();
+            guild.BalanceChange(player,assassins);
+            decimal newBalance = player.Balance;
+            Assert.AreNotEqual(initialBalance,newBalance);
+        }
     }
 }

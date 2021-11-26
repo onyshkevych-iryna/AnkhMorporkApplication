@@ -5,7 +5,7 @@ namespace AnkhMorporkApp.Tests
     public class PlayerClass
     {
         private Player player;
-        private double initialBalance;
+        private decimal initialBalance;
         private string commandToSkip;
 
         [TestInitialize]
@@ -20,7 +20,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(2)]
         [DataRow(9)]
         [DataRow(10)]
-        public void IsOutOfMoney_IfBalanceIsGraterThanInput_ReturnFalse(double input)
+        public void IsOutOfMoney_IfBalanceIsGraterThanInput_ReturnFalse(decimal input)
         {
             var result = player.IsOutOfMoney(input);
 
@@ -31,7 +31,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(20)]
         [DataRow(100)]
         [DataRow(35)]
-        public void IsOutOfMoney_IfBalanceIsLessThanInput_ReturnTrue(double input)
+        public void IsOutOfMoney_IfBalanceIsLessThanInput_ReturnTrue(decimal input)
         {
             var result = player.IsOutOfMoney(input);
 
@@ -108,7 +108,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(2)]
         [DataRow(9)]
         [DataRow(10)]
-        public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ReturnTrue(double input)
+        public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ReturnTrue(decimal input)
         {
             var result = player.EnteredSumIsCorrect(input);
 
@@ -119,12 +119,23 @@ namespace AnkhMorporkApp.Tests
         [DataRow(20)]
         [DataRow(100)]
         [DataRow(35)]
-        public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ReturnFalse(double input)
+        public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ReturnFalse(decimal input)
         {
             var result = player.EnteredSumIsCorrect(input);
 
             Assert.IsFalse(result);
         }
-        
+
+        [DataTestMethod]
+        [DataRow(20)]
+        [DataRow(100)]
+        [DataRow(35)]
+        public void zNewTry_IfBalanceIsLessThanInput_ReturnFalse(decimal input)
+        {
+
+            var result = player.EnteredSumIsCorrect(input);
+
+            Assert.IsFalse(result);
+        }
     }
 }

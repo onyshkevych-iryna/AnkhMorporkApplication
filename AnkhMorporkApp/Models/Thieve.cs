@@ -2,9 +2,9 @@
 {
     public class Thieve
     {
-        public double Fee { get; set; } = 10;
+        public decimal Fee { get; set; } = 10;
 
-        public Thieve(double fee)
+        public Thieve(decimal fee)
         {
             this.Fee = fee;
         }

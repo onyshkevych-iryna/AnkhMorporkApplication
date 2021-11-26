@@ -104,3 +104,5 @@ C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\Ank
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp.Tests\obj\Debug\net5.0\AnkhMorporkApp.Tests.pdb
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp.Tests\obj\Debug\net5.0\AnkhMorporkApp.Tests.genruntimeconfig.cache
 C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp.Tests\obj\Debug\net5.0\AnkhMorporkApp.Tests.csproj.AssemblyReference.cache
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp.Tests\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\iryna.onyshkevych\OneDrive - Valtech\Bureau\programs\AnkhMorporkApp\AnkhMorporkApp\AnkhMorporkApp.Tests\bin\Debug\net5.0\Moq.dll

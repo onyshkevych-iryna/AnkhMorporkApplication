@@ -16,7 +16,7 @@ namespace AnkhMorporkApp
         public override void BalanceChange(Player player, Thieve thieve)
         {
             string number = null;
-            double input = 0;
+            decimal input = 0;
             Console.WriteLine($"You came across a thieve!\nEnter \'s\' to skip. Or give sum of {thieve.Fee}");
             if (player.IsOutOfMoney(thieve.Fee))
                 return;
@@ -34,7 +34,7 @@ namespace AnkhMorporkApp
                     Console.WriteLine("Incorrect data! Please, try again:");
                     continue;
                 }
-                input = Double.Parse(number);
+                input = Decimal.Parse(number);
                 if (input != thieve.Fee)
                     Console.WriteLine($"The amount isn't equal {thieve.Fee}! Please, try again:");
                 else if(!player.EnteredSumIsCorrect(input))

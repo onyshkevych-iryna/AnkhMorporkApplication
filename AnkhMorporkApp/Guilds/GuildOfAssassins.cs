@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Reflection;
+using AnkhMorporkApp.Abstracts;
 using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
@@ -10,11 +9,10 @@ namespace AnkhMorporkApp
     {
         public List<Assassin> assassins;
 
-        public GuildOfAssassins()
+        public GuildOfAssassins(IFileService fileService)
         {
             try
             {
-                FileService fileService = new FileService();
                 var assassinsData = fileService.GetText("listOfAssassins.json");
                 assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
             }
@@ -23,12 +21,12 @@ namespace AnkhMorporkApp
                 Console.WriteLine(exception.Message);
             }
         }
-
+        
         public override void BalanceChange(Player player, List<Assassin> assassins)
         {
             string number = null;
-            double input = 0;
-            Console.WriteLine($"Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with assassin.");
+            decimal input = 0;
+            Console.WriteLine($"Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with an assassin.");
             var validInput = false;
             do
             {
@@ -43,7 +41,7 @@ namespace AnkhMorporkApp
                     Console.WriteLine("Incorrect data! Try again:");
                     continue;
                 }
-                input = Double.Parse(number);
+                input = Decimal.Parse(number);
                 if (!player.EnteredSumIsCorrect(input))
                     continue;
                 var contractWasMade = false;

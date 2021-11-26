@@ -67,7 +67,7 @@ namespace AnkhMorporkApp
                 Console.WriteLine("You're chased to death! Game is over.");
             }
             else if (enemy is Fool)
-                Console.WriteLine("You skipped that fool!");
+                Console.WriteLine("You rejected the offer.");
         }
 
         public override string ToString()

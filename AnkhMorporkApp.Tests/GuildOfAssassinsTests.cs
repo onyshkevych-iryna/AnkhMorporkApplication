@@ -8,7 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnkhMorporkApp.Tests
 {
     [TestClass]
-    class GuildOfAssassinsClass
+    class GuildOfAssassinsTests
     {
         private Player player;
         private double initialBalance;
@@ -22,15 +22,15 @@ namespace AnkhMorporkApp.Tests
             commandToSkip = "s";
         }
 
-        [DataTestMethod]
-        [DataRow(2)]
-        [DataRow(9)]
-        [DataRow(10)]
-        public void IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue(double input)
-        {
-            var result = player.IsMoneyEnough(input);
+        //[DataTestMethod]
+        //[DataRow(2)]
+        //[DataRow(9)]
+        //[DataRow(10)]
+        //public void IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue(double input)
+        //{
+        //    var result = player.IsMoneyEnough(input);
 
-            Assert.IsTrue(result);
-        }
+        //    Assert.IsTrue(result);
+        //}
     }
 }

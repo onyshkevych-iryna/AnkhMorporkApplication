@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AnkhMorporkApp
 {
-    public class RandomGuild:IRandomGuild
+    public class GuildsService:IGuildsService
     {
         public void Assassins(Player player)
         {

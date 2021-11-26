@@ -1,12 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using AnkhMorporkApp.Abstracts;
 
 namespace AnkhMorporkApp
 {
-    public static class FileReader
+    public class FileService:IFileService
     {
-        public static string GetText(string fileName)
+        public string GetText(string fileName)
         {
             string allPath = null;
             try

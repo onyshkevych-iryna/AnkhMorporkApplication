@@ -14,7 +14,8 @@ namespace AnkhMorporkApp
         {
             try
             {
-                var foolsData = FileReader.GetText("listOfFools.json");
+                FileService fileService = new FileService();
+                var foolsData = fileService.GetText("listOfFools.json");
                 fools = JsonConvert.DeserializeObject<Dictionary<int, Fool>>(foolsData);
             }
             catch (Exception exception)
@@ -27,7 +28,7 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Enter \'s\' to skip or \'j\' to join. You'll earn sum of {fool.Fee}");
+            Console.WriteLine($"You came across a friend!\nEnter \'s\' to skip or \'j\' to join their offer to work as {fool.Practice}. You'll earn sum of {fool.Fee}");
             var validInput = false;
             do
             {

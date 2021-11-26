@@ -14,7 +14,8 @@ namespace AnkhMorporkApp
         {
             try
             {
-                var beggarsData = FileReader.GetText("listOfBeggars.json");
+                FileService fileService = new FileService();
+                var beggarsData = fileService.GetText("listOfBeggars.json");
                 beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(beggarsData);
             }
             catch (Exception exception)
@@ -27,7 +28,7 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Enter 's' to skip. Or give sum of {beggar.Fee}");
+            Console.WriteLine($"You came across a beggar!\nEnter 's' to skip. Or give sum of {beggar.Fee}");
             if (player.IsOutOfMoney(beggar.Fee))
                 return;
             var validInput = false;

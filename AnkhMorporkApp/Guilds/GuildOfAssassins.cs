@@ -14,7 +14,8 @@ namespace AnkhMorporkApp
         {
             try
             {
-                var assassinsData = FileReader.GetText("listOfAssassins.json");
+                FileService fileService = new FileService();
+                var assassinsData = fileService.GetText("listOfAssassins.json");
                 assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
             }
             catch (Exception exception)
@@ -27,7 +28,7 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Enter 's' to skip. Or input sum of money to make a contract");
+            Console.WriteLine($"Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with assassin.");
             var validInput = false;
             do
             {
@@ -45,18 +46,18 @@ namespace AnkhMorporkApp
                 input = Double.Parse(number);
                 if (!player.EnteredSumIsCorrect(input))
                     continue;
-                var count =0;
+                var contractWasMade = false;
                 foreach (Assassin ass in assassins)
                 {
                     if (input >= ass.MinReward && input <= ass.MaxReward && (ass.IsOccupied))
                     {
-                        Console.WriteLine($"{ass.Name} made a contract with you!");
+                        Console.WriteLine($"Assassin \"{ass.Name}\" made a contract with you!");
                         player.GiveMoney(input, ref validInput);
-                        count++;
+                        contractWasMade = true;
                         break;
                     }
                 }
-                if (count == 0)
+                if (contractWasMade == false)
                 {
                     Console.WriteLine("There is no opportunity to make a contract! Game is over");
                     player.IsAlive = false;

@@ -20,22 +20,22 @@ namespace AnkhMorporkApp.Tests
         [DataRow(2)]
         [DataRow(9)]
         [DataRow(10)]
-        public void IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue(double input)
+        public void IsOutOfMoney_IfBalanceIsGraterThanInput_ReturnFalse(double input)
         {
-            var result = player.IsMoneyEnough(input);
+            var result = player.IsOutOfMoney(input);
 
-            Assert.IsTrue(result);
+            Assert.IsFalse(result);
         }
 
         [DataTestMethod]
         [DataRow(20)]
         [DataRow(100)]
         [DataRow(35)]
-        public void IsMoneyEnough_IfBalanceIsLessThanInput_ReturnFalse(double input)
+        public void IsOutOfMoney_IfBalanceIsLessThanInput_ReturnTrue(double input)
         {
-            var result = player.IsMoneyEnough(input);
+            var result = player.IsOutOfMoney(input);
 
-            Assert.IsFalse(result);
+            Assert.IsTrue(result);
         }
 
         [TestMethod]
@@ -103,5 +103,28 @@ namespace AnkhMorporkApp.Tests
 
             Assert.IsTrue(player.IsAlive);
         }
+
+        [DataTestMethod]
+        [DataRow(2)]
+        [DataRow(9)]
+        [DataRow(10)]
+        public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ReturnTrue(double input)
+        {
+            var result = player.EnteredSumIsCorrect(input);
+
+            Assert.IsTrue(result);
+        }
+
+        [DataTestMethod]
+        [DataRow(20)]
+        [DataRow(100)]
+        [DataRow(35)]
+        public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ReturnFalse(double input)
+        {
+            var result = player.EnteredSumIsCorrect(input);
+
+            Assert.IsFalse(result);
+        }
+        
     }
 }

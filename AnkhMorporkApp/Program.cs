@@ -7,13 +7,13 @@ namespace AnkhMorporkApp
         static void Main(string[] args)
         {
             Player player = new Player();
-            IRandomGuild randomGuild = new RandomGuild();
+            IGuildsService randomGuild = new GuildsService();
             Console.WriteLine("The game started!");
             Console.WriteLine(player);
             while (player.IsAlive)
             {
                 Random rnd = new Random();
-                var random =rnd.Next(0,4);
+                var random = rnd.Next(0,4);
                 try
                 {
                     switch (random)

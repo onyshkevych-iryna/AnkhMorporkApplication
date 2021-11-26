@@ -17,7 +17,7 @@ namespace AnkhMorporkApp
         {
             string number = null;
             double input = 0;
-            Console.WriteLine($"Enter \'s\' to skip. Give sum of {thieve.Fee}");
+            Console.WriteLine($"You came across a thieve!\nEnter \'s\' to skip. Or give sum of {thieve.Fee}");
             if (player.IsOutOfMoney(thieve.Fee))
                 return;
             var validInput = false;

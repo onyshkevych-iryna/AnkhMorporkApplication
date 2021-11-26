@@ -17,6 +17,7 @@ namespace AnkhMorporkApp
 
         public void Theves(Random rnd, Player player)
         {
+            GuildOfTheves.NumberOfTheves--;
             GuildOfTheves guildOfTheves = new GuildOfTheves();
             Thieve thieve = new Thieve();
             guildOfTheves.BalanceChange(player, thieve);

@@ -12,8 +12,15 @@ namespace AnkhMorporkApp
 
         public GuildOfAssassins()
         {
-            var text = FileReader.GetText("listOfAssassins.json");
-            assassins = JsonConvert.DeserializeObject<List<Assassin>>(text);
+            try
+            {
+                var assassinsData = FileReader.GetText("listOfAssassins.json");
+                assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
 
         public override void BalanceChange(Player player, List<Assassin> assassins)

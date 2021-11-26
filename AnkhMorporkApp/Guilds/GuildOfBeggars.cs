@@ -12,8 +12,15 @@ namespace AnkhMorporkApp
 
         public GuildOfBeggars()
         {
-            var text = FileReader.GetText("listOfBeggars.json");
-            beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(text);
+            try
+            {
+                var beggarsData = FileReader.GetText("listOfBeggars.json");
+                beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(beggarsData);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
 
         public override void BalanceChange(Player player, Beggar beggar)

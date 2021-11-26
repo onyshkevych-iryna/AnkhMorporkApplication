@@ -12,8 +12,15 @@ namespace AnkhMorporkApp
 
         public GuildOfFools()
         {
-            var text = FileReader.GetText("listOfFools.json");
-            fools = JsonConvert.DeserializeObject< Dictionary<int, Fool>>(text);
+            try
+            {
+                var foolsData = FileReader.GetText("listOfFools.json");
+                fools = JsonConvert.DeserializeObject<Dictionary<int, Fool>>(foolsData);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
         }
 
         public override void BalanceChange(Player player, Fool fool)

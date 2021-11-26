@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Reflection;
 
 namespace AnkhMorporkApp
@@ -7,9 +8,18 @@ namespace AnkhMorporkApp
     {
         public static string GetText(string fileName)
         {
-            var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            var allPath = Path.Combine(path, fileName);
+            string allPath = null;
+            try
+            {
+                var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                allPath = Path.Combine(path, fileName);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception.Message);
+            }
             return File.ReadAllText(allPath);
+
         }
     }
 }

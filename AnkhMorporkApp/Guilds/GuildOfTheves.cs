@@ -5,12 +5,12 @@ namespace AnkhMorporkApp
 {
     public class GuildOfTheves : Guilds<Thieve>
     {
-        public int NumberOfTheves { get; private set; } = 6;
+        public static int NumberOfTheves = 6;
         private List<Thieve> theves;
 
         public GuildOfTheves()
         {
-            theves = new List<Thieve>(NumberOfTheves);
+            theves = new List<Thieve>();
         }
 
         public override void BalanceChange(Player player, Thieve thieve)

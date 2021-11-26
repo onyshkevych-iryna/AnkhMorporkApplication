@@ -14,20 +14,28 @@ namespace AnkhMorporkApp
             {
                 Random rnd = new Random();
                 var random =rnd.Next(0,4);
-                switch (random)
+                try
                 {
-                    case 0:
-                        randomGuild.Assassins(player);
-                        break;
-                    case 1:
-                        randomGuild.Theves(rnd,player);
-                        break;
-                    case 2:
-                        randomGuild.Fools(rnd, player);
-                        break;
-                    case 3:
-                        randomGuild.Beggars(rnd, player);
-                        break;
+                    switch (random)
+                    {
+                        case 0:
+                            randomGuild.Assassins(player);
+                            break;
+                        case 1:
+                            if(GuildOfTheves.NumberOfTheves>=1)
+                                randomGuild.Theves(rnd, player);
+                            break;
+                        case 2:
+                            randomGuild.Fools(rnd, player);
+                            break;
+                        case 3:
+                            randomGuild.Beggars(rnd, player);
+                            break;
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
                 }
             }
         }

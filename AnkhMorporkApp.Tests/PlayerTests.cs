@@ -63,7 +63,7 @@ namespace AnkhMorporkApp.Tests
         }
         
         [TestMethod]
-        public void Skip_Assassin_ShouldReturnTrue()
+        public void Skip_ChoseToSkipAssassin_ShouldReturnFalse()
         {
             Assassin assassin = new Assassin("name", 11, 20, false);
 
@@ -73,7 +73,7 @@ namespace AnkhMorporkApp.Tests
         }
 
         [TestMethod]
-        public void Skip_Beggar_ShouldReturnTrue()
+        public void Skip_ChoseToSkipBeggar_ShouldReturnFalse()
         {
             Beggar beggar = new Beggar("practice", 11);
 
@@ -83,7 +83,7 @@ namespace AnkhMorporkApp.Tests
         }
 
         [TestMethod]
-        public void Skip_Thieve_ShouldReturnTrue()
+        public void Skip_ChoseToSkipThieve_ShouldReturnFalse()
         {
             Thieve thieve = new Thieve();
 
@@ -93,7 +93,7 @@ namespace AnkhMorporkApp.Tests
         }
 
         [TestMethod]
-        public void Skip_Fool_ShouldReturnFalse()
+        public void Skip_ChoseToSkipFool_ShouldReturnTrue()
         {
             Fool fool = new Fool("practice", 11);
 

@@ -11,13 +11,13 @@ namespace AnkhMorporkApp.Services.GuildsServices
             file = new FileService();
         }
 
-        public void Fools(Random rnd, Player player)
+        public void FoolMeetsPlayer(Random rnd, Player player)
         {
             GuildOfFools guildOfFools = new GuildOfFools();
             var fools = guildOfFools.fools;
             var randomFool = fools[rnd.Next(1, fools.Count + 1)];
             Fool fool = new Fool(randomFool.Practice, randomFool.Fee);
-            guildOfFools.BalanceChange(player, fool);
+            guildOfFools.InteractionWithPlayer(player, fool);
             if (player.IsAlive)
                 Console.WriteLine(player);
         }

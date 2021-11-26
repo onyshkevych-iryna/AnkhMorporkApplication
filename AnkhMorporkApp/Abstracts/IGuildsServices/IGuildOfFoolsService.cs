@@ -4,6 +4,6 @@ namespace AnkhMorporkApp.Abstracts
 {
     interface IGuildOfFoolsService
     {
-        public void Fools(Random rnd, Player player);
+        public void FoolMeetsPlayer(Random rnd, Player player);
     }
 }

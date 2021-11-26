@@ -1,3 +1,4 @@
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnkhMorporkApp.Tests
 {
@@ -18,9 +19,9 @@ namespace AnkhMorporkApp.Tests
         [DataRow(2)]
         [DataRow(9)]
         [DataRow(10)]
-        public void IsOutOfMoney_IfBalanceIsGraterThanInput_ReturnFalse(decimal input)
+        public void IsOutOfMoney_IfBalanceIsGraterThanInput_ShouldReturnFalse(int input)
         {
-            var result = player.IsOutOfMoney(input);
+            var result = player.IsOutOfMoney(Convert.ToDecimal(input));
 
             Assert.IsFalse(result);
         }
@@ -29,34 +30,35 @@ namespace AnkhMorporkApp.Tests
         [DataRow(20)]
         [DataRow(100)]
         [DataRow(35)]
-        public void IsOutOfMoney_IfBalanceIsLessThanInput_ReturnTrue(decimal input)
+        public void IsOutOfMoney_IfBalanceIsLessThanInput_ShouldReturnTrue(int input)
         {
-            var result = player.IsOutOfMoney(input);
+            var result = player.IsOutOfMoney(Convert.ToDecimal(input));
 
             Assert.IsTrue(result);
         }
 
         [TestMethod]
-        public void GetMoney_InputSum_ReturnBalanceWithAddedSum()
+        public void GetMoney_InputSum_ShouldReturnBalanceWithAddedAmount()
         {
             var amount = 2;
             var valid = false;
+            var newBalance = initialBalance + amount;
+
 
             player.GetMoney(amount,ref valid);
-            var newBalance = initialBalance + amount;
 
             Assert.IsTrue(valid);
             Assert.AreEqual(newBalance, 12);
         }
 
         [TestMethod]
-        public void GiveMoney_WithdrawSum_ReturnBalanceWithWithdrawSum()
+        public void GiveMoney_WithdrawSum_ShouldReturnBalanceWithWithdrawAmount()
         {
             var amount = 2;
             var valid = false;
+            var newBalance = initialBalance - amount;
 
             player.GiveMoney(amount, ref valid);
-            var newBalance = initialBalance - amount;
 
             Assert.IsTrue(valid);
             Assert.AreEqual(newBalance, 8);
@@ -85,7 +87,7 @@ namespace AnkhMorporkApp.Tests
         [TestMethod]
         public void Skip_ChoseToSkipThieve_ShouldReturnFalse()
         {
-            Thieve thieve = new Thieve();
+            Thief thieve = new Thief();
 
             player.Skip(thieve);
 
@@ -106,9 +108,9 @@ namespace AnkhMorporkApp.Tests
         [DataRow(2)]
         [DataRow(9)]
         [DataRow(10)]
-        public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ReturnTrue(decimal input)
+        public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ShouldReturnTrue(int input)
         {
-            var result = player.EnteredSumIsCorrect(input);
+            var result = player.EnteredSumIsCorrect(Convert.ToDecimal(input));
 
             Assert.IsTrue(result);
         }
@@ -117,9 +119,9 @@ namespace AnkhMorporkApp.Tests
         [DataRow(20)]
         [DataRow(100)]
         [DataRow(35)]
-        public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ReturnFalse(decimal input)
+        public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ShouldReturnFalse(int input)
         {
-            var result = player.EnteredSumIsCorrect(input);
+            var result = player.EnteredSumIsCorrect(Convert.ToDecimal(input));
 
             Assert.IsFalse(result);
         }

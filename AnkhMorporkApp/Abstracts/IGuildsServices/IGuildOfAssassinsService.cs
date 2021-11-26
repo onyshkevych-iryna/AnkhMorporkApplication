@@ -2,6 +2,6 @@
 {
     interface IGuildOfAssassinsService
     {
-        public void Assassins(Player player);
+        public void AssassinMeetsPlayer(Player player);
     }
 }

@@ -1,15 +1,15 @@
 ﻿namespace AnkhMorporkApp
 {
-    public class Thieve
+    public class Thief
     {
         public decimal Fee { get; set; } = 10;
 
-        public Thieve(decimal fee)
+        public Thief(decimal fee)
         {
             this.Fee = fee;
         }
 
-        public Thieve()
+        public Thief()
         {
         }
     }

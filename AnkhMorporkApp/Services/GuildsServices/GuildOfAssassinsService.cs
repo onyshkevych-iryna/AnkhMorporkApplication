@@ -12,10 +12,10 @@ namespace AnkhMorporkApp.Services
             file = new FileService();
         }
 
-        public void Assassins(Player player)
+        public void AssassinMeetsPlayer(Player player)
         {
             GuildOfAssassins guildOfAssassins = new GuildOfAssassins(file);
-            guildOfAssassins.BalanceChange(player, guildOfAssassins.assassins);
+            guildOfAssassins.InteractionWithPlayer(player, guildOfAssassins.assassins);
             if (player.IsAlive)
                 Console.WriteLine(player);
         }

@@ -14,9 +14,9 @@
     &lt;TestId&gt;MSTest::8EFE7C17-D22C-4D6C-A57A-626490479F79::net5.0::AnkhMorporkApp.Tests.GuildOfAssassinsTests.IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5caa4a70_002D1362_002D4658_002Da748_002D56149d206b2b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=5caa4a70_002D1362_002D4658_002Da748_002D56149d206b2b/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue #5" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;MSTest::8EFE7C17-D22C-4D6C-A57A-626490479F79::net5.0::AnkhMorporkApp.Tests.GuildOfAssassinsTests.IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;MSTest::8EFE7C17-D22C-4D6C-A57A-626490479F79::net5.0::AnkhMorporkApp.Tests.PlayerTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6c07848b_002Df037_002D47f5_002D90a3_002Dc6e0732de7fd/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
@@ -30,7 +30,7 @@
     &lt;TestId&gt;MSTest::8EFE7C17-D22C-4D6C-A57A-626490479F79::net5.0::AnkhMorporkApp.Tests.GuildOfAssassinsTests.IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d1a9c8d0_002D0606_002D4330_002D8b0f_002Db4a08dc28003/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="_IfBalanceIsLessThanInput_ReturnFalse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d1a9c8d0_002D0606_002D4330_002D8b0f_002Db4a08dc28003/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="_IfBalanceIsLessThanInput_ReturnFalse" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;MSTest::8EFE7C17-D22C-4D6C-A57A-626490479F79::net5.0::AnkhMorporkApp.Tests.GuildOfAssassinsTests.IsMoneyEnough_IfBalanceIsGraterThanInput_ReturnTrue&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;

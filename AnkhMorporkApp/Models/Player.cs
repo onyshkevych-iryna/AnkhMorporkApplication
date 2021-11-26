@@ -29,7 +29,9 @@ namespace AnkhMorporkApp
             if (this.Balance <= 0)
             {
                 IsAlive = false;
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don't have enough money! Game is over.");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -37,7 +39,9 @@ namespace AnkhMorporkApp
         {
             if (Balance < input)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don't have enough money! Game is over.");
+                Console.ForegroundColor = ConsoleColor.White;
                 IsAlive = false;
                 return true;
             }
@@ -48,7 +52,9 @@ namespace AnkhMorporkApp
         {
             if (Balance < input)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don't have that sum of money! Please, try again:");
+                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
             return true;
@@ -56,7 +62,8 @@ namespace AnkhMorporkApp
 
         public void Skip<T>(T enemy)
         {
-            if ((enemy is Assassin) || (enemy is Thieve))
+            Console.ForegroundColor = ConsoleColor.Red;
+            if ((enemy is Assassin) || (enemy is Thief))
             {
                 IsAlive = false;
                 Console.WriteLine("You're killed! Game is over.");
@@ -68,6 +75,7 @@ namespace AnkhMorporkApp
             }
             else if (enemy is Fool)
                 Console.WriteLine("You rejected the offer.");
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public override string ToString()

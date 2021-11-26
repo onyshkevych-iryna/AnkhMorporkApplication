@@ -6,24 +6,24 @@ namespace AnkhMorporkApp
 {
     public class Game
     {
-        private GuildOfAssassinsService guildOfAssassins;
-        private GuildOfFoolsService guildOfFools;
-        private GuildOfBeggarsService guildOfBeggars;
-        private GuildOfThevesService guildOfTheves;
+        private const int maxNumberOfGuilds = 4;
+        private GuildOfAssassinsService assassinsService;
+        private GuildOfFoolsService foolsService;
+        private GuildOfBeggarsService beggarsService;
+        private GuildOfThievesService thievesService;
         private Player player;
 
         public Game()
-        { 
-            guildOfAssassins = new GuildOfAssassinsService();
-            guildOfFools = new GuildOfFoolsService();
-            guildOfBeggars = new GuildOfBeggarsService();
-            guildOfTheves = new GuildOfThevesService();
+        {
+            assassinsService = new GuildOfAssassinsService();
+            foolsService = new GuildOfFoolsService();
+            beggarsService = new GuildOfBeggarsService();
+            thievesService = new GuildOfThievesService();
             player = new Player();
         }
 
         public void GameStart()
         {
-            var maxNumberOfGuilds = 4;
             Console.WriteLine("The game started!");
             Console.WriteLine(player);
             while (player.IsAlive)
@@ -34,18 +34,18 @@ namespace AnkhMorporkApp
                 {
                     switch (random)
                     {
-                        case 0:
-                            guildOfAssassins.Assassins(player);
-                            break;
-                        case 1:
-                            if (GuildOfTheves.NumberOfTheves > 0)
-                                guildOfTheves.Theves(rnd, player);
-                            break;
-                        case 2:
-                            guildOfFools.Fools(rnd, player);
-                            break;
+                        //case 0:
+                        //    assassinsService.AssassinMeetsPlayer(player);
+                        //    break;
+                        //case 1:
+                        //    if (GuildOfThieves.NumberOfThieves > 0)
+                        //        thievesService.ThiefMeetsPlayer(rnd, player);
+                        //    break;
+                        //case 2:
+                        //    foolsService.FoolMeetsPlayer(rnd, player);
+                        //    break;
                         case 3:
-                            guildOfBeggars.Beggars(rnd, player);
+                            beggarsService.BeggarMeetsPlayer(rnd, player);
                             break;
                     }
                 }

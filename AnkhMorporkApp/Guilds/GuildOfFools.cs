@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
 {
-    public class GuildOfFools: Guilds<Fool>
+    public class GuildOfFools : Guilds<Fool>
     {
         public Dictionary<int, Fool> fools;
 
@@ -22,21 +22,22 @@ namespace AnkhMorporkApp
             }
         }
 
-        public override void BalanceChange(Player player, Fool fool)
+        public override void InteractionWithPlayer(Player player, Fool fool)
         {
-            string number = null;
-            double input = 0;
-            Console.WriteLine($"You came across a friend!\nEnter \'s\' to skip or \'j\' to join their offer to work as {fool.Practice}. You'll earn sum of {fool.Fee}");
+            string input = null;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"You came across a friend!\nEnter \'s\' to skip or \'j\' to join their offer to work as {fool.Practice}. You'll earn {fool.Fee} AM$.");
+            Console.ForegroundColor = ConsoleColor.White;
             var validInput = false;
             do
             {
-                number = Console.ReadLine();
-                if (number == "s")
+                input = Console.ReadLine();
+                if (input == "s")
                 {
                     player.Skip(fool);
                     validInput = true;
                 }
-                else if (number == "j")
+                else if (input == "j")
                     player.GetMoney(fool.Fee, ref validInput);
                 else
                     Console.WriteLine("Invalid input! Please, try again:");

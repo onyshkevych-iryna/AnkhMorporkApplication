@@ -5,6 +5,6 @@
         public Guilds()
         {
         }
-        public abstract void BalanceChange(Player player, T guildMember);
+        public abstract void InteractionWithPlayer(Player player, T guildMember);
     }
 }

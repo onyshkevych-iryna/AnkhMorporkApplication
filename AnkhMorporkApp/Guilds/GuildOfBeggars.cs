@@ -22,35 +22,48 @@ namespace AnkhMorporkApp
             }
         }
 
-        public override void BalanceChange(Player player, Beggar beggar)
+        public override void InteractionWithPlayer(Player player, Beggar beggar)
         {
-            string number = null;
-            decimal input = 0;
-            Console.WriteLine($"You came across a beggar!\nEnter 's' to skip. Or give sum of {beggar.Fee}");
-            if (player.IsOutOfMoney(beggar.Fee))
-                return;
-            var validInput = false;
-            do
+            string input = null;
+            decimal amount = 0;
+            if (beggar.Fee != 0)
             {
-                number = Console.ReadLine();
-                if (number == "s")
-                {
-                    player.Skip(beggar);
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"You came across a beggar!\nEnter 's' to skip. Or give {beggar.Fee} AM$.");
+                Console.ForegroundColor = ConsoleColor.White;
+                if (player.IsOutOfMoney(beggar.Fee))
                     return;
-                }
-                if (!Decimal.TryParse(number, out decimal result))
+                var validInput = false;
+                do
                 {
-                    Console.WriteLine("Incorrect data! Please, try again:");
-                    continue;
-                }
-                input = Decimal.Parse(number);
-                if (input != beggar.Fee)
-                    Console.WriteLine($"The amount isn't equal {beggar.Fee}! Please, try again:");
-                else if (!player.EnteredSumIsCorrect(input))
-                    return;
-                else
-                    player.GiveMoney(input, ref validInput);
-            } while (!validInput);
+                    input = Console.ReadLine();
+                    if (input == "s")
+                    {
+                        player.Skip(beggar);
+                        return;
+                    }
+
+                    if (!Decimal.TryParse(input, out decimal result))
+                    {
+                        Console.WriteLine("Incorrect data! Please, try again:");
+                        continue;
+                    }
+
+                    amount = Decimal.Parse(input);
+                    if (amount != beggar.Fee)
+                        Console.WriteLine($"The amount isn't equal to {beggar.Fee}! Please, try again:");
+                    else if (!player.EnteredSumIsCorrect(amount))
+                        return;
+                    else
+                        player.GiveMoney(amount, ref validInput);
+                } while (!validInput);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("You met people with placards Saying \"Why lie? I need a beer\".");
+                Console.ForegroundColor = ConsoleColor.White;
+            }
         }
     }
 }

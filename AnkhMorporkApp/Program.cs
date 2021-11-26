@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AnkhMorporkApp
+﻿namespace AnkhMorporkApp
 {
     class Program
     {

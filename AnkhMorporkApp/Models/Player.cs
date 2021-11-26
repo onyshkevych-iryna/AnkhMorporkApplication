@@ -29,7 +29,7 @@ namespace AnkhMorporkApp
             if (this.Balance <= 0)
             {
                 IsAlive = false;
-                Console.WriteLine("You don't have enough money! Game is over");
+                Console.WriteLine("You don't have enough money! Game is over.");
             }
         }
 
@@ -37,7 +37,7 @@ namespace AnkhMorporkApp
         {
             if (Balance < input)
             {
-                Console.WriteLine("You don't have enough money! Game is over");
+                Console.WriteLine("You don't have enough money! Game is over.");
                 IsAlive = false;
                 return true;
             }
@@ -54,25 +54,25 @@ namespace AnkhMorporkApp
             return true;
         }
 
-        public void Skip<T>(string number, T enemy)
+        public void Skip<T>(T enemy)
         {
             if ((enemy is Assassin) || (enemy is Thieve))
             {
                 IsAlive = false;
-                Console.WriteLine("Game is over. You're killed");
+                Console.WriteLine("You're killed! Game is over.");
             }
             else if (enemy is Beggar)
             {
                 IsAlive = false;
-                Console.WriteLine("Game is over. You're chased to death");
+                Console.WriteLine("You're chased to death! Game is over.");
             }
             else if (enemy is Fool)
-                Console.WriteLine("You skipped that fool");
+                Console.WriteLine("You skipped that fool!");
         }
 
         public override string ToString()
         {
-            return $"Your current balance is: {this.Balance}";
+            return $"\nYour current balance: {this.Balance}\n";
         }
     }
 }

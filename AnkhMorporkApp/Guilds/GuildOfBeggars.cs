@@ -7,7 +7,7 @@ namespace AnkhMorporkApp
     public class GuildOfBeggars : Guilds<Beggar>
     {
         public Dictionary<int, Beggar> beggars;
-
+        
         public GuildOfBeggars()
         {
             try
@@ -35,7 +35,7 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (number == "s")
                 {
-                    player.Skip(number, beggar);
+                    player.Skip(beggar);
                     return;
                 }
                 if (!Decimal.TryParse(number, out decimal result))

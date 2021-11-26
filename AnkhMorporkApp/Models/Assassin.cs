@@ -1,5 +1,4 @@
-﻿
-namespace AnkhMorporkApp
+﻿namespace AnkhMorporkApp
 {
     public class Assassin
     {

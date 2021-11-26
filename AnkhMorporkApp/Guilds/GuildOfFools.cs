@@ -33,7 +33,7 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (number == "s")
                 {
-                    player.Skip(number, fool);
+                    player.Skip(fool);
                     validInput = true;
                 }
                 else if (number == "j")

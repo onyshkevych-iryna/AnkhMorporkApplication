@@ -1,5 +1,4 @@
-﻿
-namespace AnkhMorporkApp.Abstracts
+﻿namespace AnkhMorporkApp.Abstracts
 {
     public interface IFileService
     {

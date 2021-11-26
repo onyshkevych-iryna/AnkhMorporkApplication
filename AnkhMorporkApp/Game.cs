@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AnkhMorporkApp.Services;
 using AnkhMorporkApp.Services.GuildsServices;
 
@@ -15,6 +11,7 @@ namespace AnkhMorporkApp
         private GuildOfBeggarsService guildOfBeggars;
         private GuildOfThevesService guildOfTheves;
         private Player player;
+
         public Game()
         { 
             guildOfAssassins = new GuildOfAssassinsService();
@@ -26,12 +23,13 @@ namespace AnkhMorporkApp
 
         public void GameStart()
         {
+            var maxNumberOfGuilds = 4;
             Console.WriteLine("The game started!");
             Console.WriteLine(player);
             while (player.IsAlive)
             {
                 Random rnd = new Random();
-                var random = rnd.Next(0, 4);
+                var random = rnd.Next(0, maxNumberOfGuilds);
                 try
                 {
                     switch (random)
@@ -40,7 +38,7 @@ namespace AnkhMorporkApp
                             guildOfAssassins.Assassins(player);
                             break;
                         case 1:
-                            if (GuildOfTheves.NumberOfTheves >= 1)
+                            if (GuildOfTheves.NumberOfTheves > 0)
                                 guildOfTheves.Theves(rnd, player);
                             break;
                         case 2:

@@ -1,7 +1,4 @@
 ﻿using System;
-using AnkhMorporkApp.Abstracts;
-using AnkhMorporkApp.Services;
-using AnkhMorporkApp.Services.GuildsServices;
 
 namespace AnkhMorporkApp
 {

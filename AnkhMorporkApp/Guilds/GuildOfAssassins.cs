@@ -33,7 +33,7 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (number == "s")
                 {
-                    player.Skip(number, assassins);
+                    player.Skip(assassins);
                     return;
                 }
                 if (!Double.TryParse(number, out double result))

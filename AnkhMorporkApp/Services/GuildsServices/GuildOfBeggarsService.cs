@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AnkhMorporkApp.Abstracts;
 
 namespace AnkhMorporkApp.Services
@@ -10,6 +6,7 @@ namespace AnkhMorporkApp.Services
     public class GuildOfBeggarsService : IGuildOfBeggarsService
     {
         public IFileService file;
+
         public GuildOfBeggarsService()
         {
             file = new FileService();

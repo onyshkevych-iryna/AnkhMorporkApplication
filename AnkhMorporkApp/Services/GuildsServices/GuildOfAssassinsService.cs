@@ -6,6 +6,7 @@ namespace AnkhMorporkApp.Services
     public class GuildOfAssassinsService: IGuildOfAssassinsService
     {
         public IFileService file;
+
         public GuildOfAssassinsService()
         {
             file = new FileService();
@@ -18,6 +19,5 @@ namespace AnkhMorporkApp.Services
             if (player.IsAlive)
                 Console.WriteLine(player);
         }
-
     }
 }

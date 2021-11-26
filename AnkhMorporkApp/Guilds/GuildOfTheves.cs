@@ -26,7 +26,7 @@ namespace AnkhMorporkApp
                 number = Console.ReadLine();
                 if (number == "s")
                 {
-                    player.Skip(number, thieve);
+                    player.Skip(thieve);
                     return;
                 }
                 if (!Double.TryParse(number, out double result))

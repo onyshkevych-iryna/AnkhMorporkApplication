@@ -2,18 +2,16 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnkhMorporkApp.Tests
 {
     [TestClass]
-    public class PlayerClass
+    public class PlayerTests
     {
         private Player player;
         private decimal initialBalance;
-        private string commandToSkip;
 
         [TestInitialize]
         public void SetUp()
         {
             initialBalance = 10;
             player = new Player(initialBalance);
-            commandToSkip = "s";
         }
         
         [DataTestMethod]
@@ -69,7 +67,7 @@ namespace AnkhMorporkApp.Tests
         {
             Assassin assassin = new Assassin("name", 11, 20, false);
 
-            player.Skip(commandToSkip, assassin);
+            player.Skip(assassin);
 
             Assert.IsFalse(player.IsAlive);
         }
@@ -79,7 +77,7 @@ namespace AnkhMorporkApp.Tests
         {
             Beggar beggar = new Beggar("practice", 11);
 
-            player.Skip(commandToSkip, beggar);
+            player.Skip(beggar);
 
             Assert.IsFalse(player.IsAlive);
         }
@@ -89,7 +87,7 @@ namespace AnkhMorporkApp.Tests
         {
             Thieve thieve = new Thieve();
 
-            player.Skip(commandToSkip, thieve);
+            player.Skip(thieve);
 
             Assert.IsFalse(player.IsAlive);
         }
@@ -99,7 +97,7 @@ namespace AnkhMorporkApp.Tests
         {
             Fool fool = new Fool("practice", 11);
 
-            player.Skip(commandToSkip, fool);
+            player.Skip(fool);
 
             Assert.IsTrue(player.IsAlive);
         }
@@ -121,18 +119,6 @@ namespace AnkhMorporkApp.Tests
         [DataRow(35)]
         public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ReturnFalse(decimal input)
         {
-            var result = player.EnteredSumIsCorrect(input);
-
-            Assert.IsFalse(result);
-        }
-
-        [DataTestMethod]
-        [DataRow(20)]
-        [DataRow(100)]
-        [DataRow(35)]
-        public void zNewTry_IfBalanceIsLessThanInput_ReturnFalse(decimal input)
-        {
-
             var result = player.EnteredSumIsCorrect(input);
 
             Assert.IsFalse(result);

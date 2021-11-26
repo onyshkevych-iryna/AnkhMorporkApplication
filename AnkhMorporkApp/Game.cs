@@ -34,16 +34,16 @@ namespace AnkhMorporkApp
                 {
                     switch (random)
                     {
-                        //case 0:
-                        //    assassinsService.AssassinMeetsPlayer(player);
-                        //    break;
-                        //case 1:
-                        //    if (GuildOfThieves.NumberOfThieves > 0)
-                        //        thievesService.ThiefMeetsPlayer(rnd, player);
-                        //    break;
-                        //case 2:
-                        //    foolsService.FoolMeetsPlayer(rnd, player);
-                        //    break;
+                        case 0:
+                            assassinsService.AssassinMeetsPlayer(player);
+                            break;
+                        case 1:
+                            if (GuildOfThieves.NumberOfThieves > 0)
+                                thievesService.ThiefMeetsPlayer(rnd, player);
+                            break;
+                        case 2:
+                            foolsService.FoolMeetsPlayer(rnd, player);
+                            break;
                         case 3:
                             beggarsService.BeggarMeetsPlayer(rnd, player);
                             break;

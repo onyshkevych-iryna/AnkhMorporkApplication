@@ -52,9 +52,7 @@ namespace AnkhMorporkApp
         {
             if (Balance < input)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("You don't have that sum of money! Please, try again:");
-                Console.ForegroundColor = ConsoleColor.White;
                 return false;
             }
             return true;

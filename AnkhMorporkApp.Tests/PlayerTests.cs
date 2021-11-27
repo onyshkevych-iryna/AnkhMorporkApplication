@@ -44,7 +44,6 @@ namespace AnkhMorporkApp.Tests
             var valid = false;
             var newBalance = initialBalance + amount;
 
-
             player.GetMoney(amount,ref valid);
 
             Assert.IsTrue(valid);

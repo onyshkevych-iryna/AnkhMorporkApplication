@@ -42,13 +42,11 @@ namespace AnkhMorporkApp
                         player.Skip(beggar);
                         return;
                     }
-
                     if (!Decimal.TryParse(input, out decimal result))
                     {
                         Console.WriteLine("Incorrect data! Please, try again:");
                         continue;
                     }
-
                     amount = Decimal.Parse(input);
                     if (amount != beggar.Fee)
                         Console.WriteLine($"The amount isn't equal to {beggar.Fee}! Please, try again:");
@@ -61,7 +59,7 @@ namespace AnkhMorporkApp
             else
             {
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("You met people with placards Saying \"Why lie? I need a beer\".");
+                Console.WriteLine("You met people with placards saying: \"Why lie? I need a beer\".");
                 Console.ForegroundColor = ConsoleColor.White;
             }
         }

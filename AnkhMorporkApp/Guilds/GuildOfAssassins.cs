@@ -27,7 +27,7 @@ namespace AnkhMorporkApp
             string input = null;
             decimal amount = 0;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with an assassin.");
+            Console.WriteLine("Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with an assassin.");
             Console.ForegroundColor = ConsoleColor.White;
             var validInput = false;
             do
@@ -59,7 +59,9 @@ namespace AnkhMorporkApp
                 }
                 if (contractWasMade == false)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("There is no opportunity to make a contract! Game is over");
+                    Console.ForegroundColor = ConsoleColor.White;
                     player.IsAlive = false;
                     return;
                 }

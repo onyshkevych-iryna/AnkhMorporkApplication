@@ -15,9 +15,8 @@ namespace AnkhMorporkApp.Services.GuildsServices
         {
             GuildOfFools guildOfFools = new GuildOfFools();
             var fools = guildOfFools.fools;
-            var randomFool = fools[rnd.Next(1, fools.Count + 1)];
-            Fool fool = new Fool(randomFool.Practice, randomFool.Fee);
-            guildOfFools.InteractionWithPlayer(player, fool);
+            Fool randomFool = fools[rnd.Next(1, fools.Count + 1)];
+            guildOfFools.InteractionWithPlayer(player, randomFool);
             if (player.IsAlive)
                 Console.WriteLine(player);
         }

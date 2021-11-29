@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AnkhMorporkApp.Tests
 {
@@ -66,9 +67,12 @@ namespace AnkhMorporkApp.Tests
         [TestMethod]
         public void Skip_PlayerChoseToSkipAssassin_IsAliveShouldBeFalse()
         {
-            Assassin assassin = new Assassin("name", 11, 20, false);
+            List<Assassin> assassins = new List<Assassin>()
+            {
+                new Assassin("name", 11, 20, false)
+            };
 
-            _player.Skip(assassin);
+            _player.Skip(assassins);
 
             Assert.IsFalse(_player.IsAlive);
         }

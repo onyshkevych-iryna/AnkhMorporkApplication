@@ -8,6 +8,15 @@ namespace AnkhMorporkApp
         public decimal Balance { get; set; } = 100;
         public bool IsAlive { get; set; } = true;
 
+        public Player()
+        {
+        }
+
+        public Player(decimal balance)
+        {
+            this.Balance = balance;
+        }
+
         public void GetMoney(decimal amount, ref bool validoutput)
         {
             this.Balance += amount;

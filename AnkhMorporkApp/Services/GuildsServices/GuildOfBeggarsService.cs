@@ -5,11 +5,11 @@ namespace AnkhMorporkApp.Services
 {
     public class GuildOfBeggarsService : IGuildOfBeggarsService
     {
-        public IFileService file;
+        public IFileService File;
 
         public GuildOfBeggarsService()
         {
-            file = new FileService();
+            File = new FileService();
         }
 
         public void BeggarMeetsPlayer(Random rnd, Player player)

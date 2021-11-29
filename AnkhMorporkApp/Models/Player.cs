@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
@@ -61,7 +62,7 @@ namespace AnkhMorporkApp
         public void Skip<T>(T enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            if ((enemy is Assassin) || (enemy is Thief))
+            if ((enemy is List<Assassin>) || (enemy is Thief))
             {
                 IsAlive = false;
                 Console.WriteLine("You're killed! Game is over.");

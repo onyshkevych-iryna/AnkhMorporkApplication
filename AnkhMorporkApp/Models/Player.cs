@@ -62,18 +62,21 @@ namespace AnkhMorporkApp
         public void Skip<T>(T enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            if ((enemy is List<Assassin>) || (enemy is Thief))
+            switch (enemy)
             {
-                IsAlive = false;
-                Console.WriteLine("You're killed! Game is over.");
+                case List<Assassin>:
+                case Thief:
+                    IsAlive = false;
+                    Console.WriteLine("You're killed! Game is over.");
+                    break;
+                case Beggar:
+                    IsAlive = false;
+                    Console.WriteLine("You're chased to death! Game is over.");
+                    break;
+                case Fool:
+                    Console.WriteLine("You rejected the offer.");
+                    break;
             }
-            else if (enemy is Beggar)
-            {
-                IsAlive = false;
-                Console.WriteLine("You're chased to death! Game is over.");
-            }
-            else if (enemy is Fool)
-                Console.WriteLine("You rejected the offer.");
             Console.ForegroundColor = ConsoleColor.White;
         }
 

@@ -6,11 +6,11 @@ namespace AnkhMorporkApp
     public class GuildOfThieves : Guilds<Thief>
     {
         public static int NumberOfThieves = 6;
-        private List<Thief> theves;
+        public List<Thief> Theves;
 
         public GuildOfThieves()
         {
-            theves = new List<Thief>();
+            Theves = new List<Thief>();
         }
 
         public override void InteractionWithPlayer(Player player, Thief thief)

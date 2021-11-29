@@ -5,14 +5,14 @@ namespace AnkhMorporkApp.Tests
     [TestClass]
     public class PlayerTests
     {
-        private Player player;
-        private decimal initialBalance;
+        private Player _player;
+        private decimal _initialBalance;
 
         [TestInitialize]
         public void SetUp()
         {
-            initialBalance = 10;
-            player = new Player(initialBalance);
+            _initialBalance = 10;
+            _player = new Player(_initialBalance);
         }
         
         [DataTestMethod]
@@ -21,7 +21,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(10)]
         public void IsOutOfMoney_IfBalanceIsGraterThanInput_ShouldReturnFalse(int input)
         {
-            var result = player.IsOutOfMoney(Convert.ToDecimal(input));
+            var result = _player.IsOutOfMoney(Convert.ToDecimal(input));
 
             Assert.IsFalse(result);
         }
@@ -32,7 +32,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(35)]
         public void IsOutOfMoney_IfBalanceIsLessThanInput_ShouldReturnTrue(int input)
         {
-            var result = player.IsOutOfMoney(Convert.ToDecimal(input));
+            var result = _player.IsOutOfMoney(Convert.ToDecimal(input));
 
             Assert.IsTrue(result);
         }
@@ -42,9 +42,9 @@ namespace AnkhMorporkApp.Tests
         {
             var amount = 2;
             var valid = false;
-            var newBalance = initialBalance + amount;
+            var newBalance = _initialBalance + amount;
 
-            player.GetMoney(amount,ref valid);
+            _player.GetMoney(amount,ref valid);
 
             Assert.IsTrue(valid);
             Assert.AreEqual(newBalance, 12);
@@ -55,9 +55,9 @@ namespace AnkhMorporkApp.Tests
         {
             var amount = 2;
             var valid = false;
-            var newBalance = initialBalance - amount;
+            var newBalance = _initialBalance - amount;
 
-            player.GiveMoney(amount, ref valid);
+            _player.GiveMoney(amount, ref valid);
 
             Assert.IsTrue(valid);
             Assert.AreEqual(newBalance, 8);
@@ -68,9 +68,9 @@ namespace AnkhMorporkApp.Tests
         {
             Assassin assassin = new Assassin("name", 11, 20, false);
 
-            player.Skip(assassin);
+            _player.Skip(assassin);
 
-            Assert.IsFalse(player.IsAlive);
+            Assert.IsFalse(_player.IsAlive);
         }
 
         [TestMethod]
@@ -78,9 +78,9 @@ namespace AnkhMorporkApp.Tests
         {
             Beggar beggar = new Beggar("practice", 11);
 
-            player.Skip(beggar);
+            _player.Skip(beggar);
 
-            Assert.IsFalse(player.IsAlive);
+            Assert.IsFalse(_player.IsAlive);
         }
 
         [TestMethod]
@@ -88,9 +88,9 @@ namespace AnkhMorporkApp.Tests
         {
             Thief thieve = new Thief();
 
-            player.Skip(thieve);
+            _player.Skip(thieve);
 
-            Assert.IsFalse(player.IsAlive);
+            Assert.IsFalse(_player.IsAlive);
         }
 
         [TestMethod]
@@ -98,9 +98,9 @@ namespace AnkhMorporkApp.Tests
         {
             Fool fool = new Fool("practice", 11);
 
-            player.Skip(fool);
+            _player.Skip(fool);
 
-            Assert.IsTrue(player.IsAlive);
+            Assert.IsTrue(_player.IsAlive);
         }
 
         [DataTestMethod]
@@ -109,7 +109,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(10)]
         public void EnteredSumIsCorrect_IfBalanceIsGraterThanInput_ShouldReturnTrue(int input)
         {
-            var result = player.EnteredSumIsCorrect(Convert.ToDecimal(input));
+            var result = _player.EnteredSumIsCorrect(Convert.ToDecimal(input));
 
             Assert.IsTrue(result);
         }
@@ -120,7 +120,7 @@ namespace AnkhMorporkApp.Tests
         [DataRow(35)]
         public void EnteredSumIsCorrect_IfBalanceIsLessThanInput_ShouldReturnFalse(int input)
         {
-            var result = player.EnteredSumIsCorrect(Convert.ToDecimal(input));
+            var result = _player.EnteredSumIsCorrect(Convert.ToDecimal(input));
 
             Assert.IsFalse(result);
         }

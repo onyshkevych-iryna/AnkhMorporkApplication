@@ -7,14 +7,14 @@ namespace AnkhMorporkApp
 {
     public class GuildOfAssassins : Guilds<List<Assassin>>
     {
-        public List<Assassin> assassins;
+        public List<Assassin> Assassins;
 
         public GuildOfAssassins(IFileService fileService)
         {
             try
             {
                 var assassinsData = fileService.GetText("listOfAssassins.json");
-                assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
+                Assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
             }
             catch (Exception exception)
             {

@@ -6,7 +6,7 @@ namespace AnkhMorporkApp
 {
     public class GuildOfBeggars : Guilds<Beggar>
     {
-        public Dictionary<int, Beggar> beggars;
+        public Dictionary<int, Beggar> Beggars;
         
         public GuildOfBeggars()
         {
@@ -14,7 +14,7 @@ namespace AnkhMorporkApp
             {
                 FileService fileService = new FileService();
                 var beggarsData = fileService.GetText("listOfBeggars.json");
-                beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(beggarsData);
+                Beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(beggarsData);
             }
             catch (Exception exception)
             {

@@ -15,7 +15,7 @@ namespace AnkhMorporkApp.Services
         public void BeggarMeetsPlayer(Random rnd, Player player)
         {
             GuildOfBeggars guildOfBeggars = new GuildOfBeggars();
-            var beggars = guildOfBeggars.beggars;
+            var beggars = guildOfBeggars.Beggars;
             Beggar randomBeggar = beggars[rnd.Next(1, beggars.Count + 1)];
             guildOfBeggars.InteractionWithPlayer(player, randomBeggar);
             if (player.IsAlive)

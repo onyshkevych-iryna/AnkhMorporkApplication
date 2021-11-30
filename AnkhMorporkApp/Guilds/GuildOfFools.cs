@@ -34,7 +34,7 @@ namespace AnkhMorporkApp
                 input = Console.ReadLine();
                 if (input == "no")
                 {
-                    player.Skip(fool);
+                    player.Skip(fool.GetType());
                     validInput = true;
                 }
                 else if (input == "yes")

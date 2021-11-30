@@ -35,7 +35,7 @@ namespace AnkhMorporkApp
                 input = Console.ReadLine();
                 if (input == "no")
                 {
-                    player.Skip(assassins);
+                    player.Skip(assassins.GetType());
                     return;
                 }
                 if (!Double.TryParse(input, out double result))

@@ -39,13 +39,11 @@ namespace AnkhMorporkApp
                     input = Console.ReadLine();
                     if (input == "no")
                     {
-                        player.Skip(beggar);
+                        player.Skip(beggar.GetType());
                         return;
                     }
                     if (input == "yes")
-                    {
                         player.GiveMoney(beggar.Fee, ref validInput);
-                    }
                     else
                     {
                         Console.WriteLine("Incorrect data! Please, try again:");

@@ -59,21 +59,20 @@ namespace AnkhMorporkApp
             return true;
         }
 
-        public void Skip<T>(T enemy)
+        public void Skip(Type enemy)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             switch (enemy)
             {
-                case List<Assassin>:
-                case Thief:
+                case var _ when (enemy.Equals(typeof(Thief))|| enemy.Equals(typeof(List<Assassin>))):
                     IsAlive = false;
                     Console.WriteLine("You're killed! Game is over.");
                     break;
-                case Beggar:
+                case var _ when enemy.Equals(typeof(Beggar)):
                     IsAlive = false;
                     Console.WriteLine("You're chased to death! Game is over.");
                     break;
-                case Fool:
+                case var _ when enemy.Equals(typeof(Fool)):
                     Console.WriteLine("You rejected the offer.");
                     break;
             }

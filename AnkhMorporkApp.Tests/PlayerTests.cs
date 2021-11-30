@@ -72,7 +72,7 @@ namespace AnkhMorporkApp.Tests
                 new Assassin("name", 11, 20, false)
             };
 
-            _player.Skip(assassins);
+            _player.Skip(assassins.GetType());
 
             Assert.IsFalse(_player.IsAlive);
         }
@@ -82,7 +82,7 @@ namespace AnkhMorporkApp.Tests
         {
             Beggar beggar = new Beggar("practice", 11);
 
-            _player.Skip(beggar);
+            _player.Skip(beggar.GetType());
 
             Assert.IsFalse(_player.IsAlive);
         }
@@ -92,7 +92,7 @@ namespace AnkhMorporkApp.Tests
         {
             Thief thieve = new Thief();
 
-            _player.Skip(thieve);
+            _player.Skip(thieve.GetType());
 
             Assert.IsFalse(_player.IsAlive);
         }
@@ -102,7 +102,7 @@ namespace AnkhMorporkApp.Tests
         {
             Fool fool = new Fool("practice", 11);
 
-            _player.Skip(fool);
+            _player.Skip(fool.GetType());
 
             Assert.IsTrue(_player.IsAlive);
         }

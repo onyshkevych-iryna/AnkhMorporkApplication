@@ -28,13 +28,11 @@ namespace AnkhMorporkApp
                 input = Console.ReadLine();
                 if (input == "no")
                 {
-                    player.Skip(thief);
+                    player.Skip(thief.GetType());
                     return;
                 }
                 if (input == "yes")
-                {
                     player.GiveMoney(thief.Fee, ref validInput);
-                }
                 else
                 {
                     Console.WriteLine("Incorrect data! Please, try again:");

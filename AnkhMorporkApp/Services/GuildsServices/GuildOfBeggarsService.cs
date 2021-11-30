@@ -19,7 +19,9 @@ namespace AnkhMorporkApp.Services
             Beggar randomBeggar = beggars[rnd.Next(1, beggars.Count + 1)];
             guildOfBeggars.InteractionWithPlayer(player, randomBeggar);
             if (player.IsAlive)
+            {
                 Console.WriteLine(player);
+            }
         }
     }
 }

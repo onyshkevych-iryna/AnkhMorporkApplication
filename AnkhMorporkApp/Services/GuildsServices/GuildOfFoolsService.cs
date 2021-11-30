@@ -18,7 +18,9 @@ namespace AnkhMorporkApp.Services.GuildsServices
             Fool randomFool = fools[rnd.Next(1, fools.Count + 1)];
             guildOfFools.InteractionWithPlayer(player, randomFool);
             if (player.IsAlive)
+            {
                 Console.WriteLine(player);
+            }
         }
     }
 }

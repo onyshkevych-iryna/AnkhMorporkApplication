@@ -17,7 +17,9 @@ namespace AnkhMorporkApp.Services
             GuildOfAssassins guildOfAssassins = new GuildOfAssassins(File);
             guildOfAssassins.InteractionWithPlayer(player, guildOfAssassins.Assassins);
             if (player.IsAlive)
+            {
                 Console.WriteLine(player);
+            }
         }
     }
 }

@@ -19,7 +19,9 @@ namespace AnkhMorporkApp.Services
             Thief thieve = new Thief();
             guildOfTheves.InteractionWithPlayer(player, thieve);
             if (player.IsAlive)
+            {
                 Console.WriteLine(player);
+            }
         }
     }
 }

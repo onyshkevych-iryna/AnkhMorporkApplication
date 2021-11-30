@@ -36,18 +36,18 @@ namespace AnkhMorporkApp
 
         public bool IsOutOfMoney(decimal input)
         {
-            if (Balance > input)
+            if (Balance >= input)
             {
                 return false;
             }
-            ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.",ConsoleColor.Red);
+            ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.", ConsoleColor.Red);
             IsAlive = false;
             return true;
         }
 
         public bool EnteredSumIsCorrect(decimal input)
         {
-            if (Balance > input)
+            if (Balance >= input)
             {
                 return true;
             }

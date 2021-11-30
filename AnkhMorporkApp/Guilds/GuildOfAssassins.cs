@@ -25,7 +25,7 @@ namespace AnkhMorporkApp
         public override void InteractionWithPlayer(Player player, List<Assassin> assassins)
         {
             decimal amount;
-            ConsoleColorChanger.ChangeColor("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.",ConsoleColor.Green);
+            ConsoleColorChanger.ChangeColor("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.", ConsoleColor.Green);
             var validInput = false;
             do
             {

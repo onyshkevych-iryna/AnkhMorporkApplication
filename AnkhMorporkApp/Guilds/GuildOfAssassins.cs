@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using AnkhMorporkApp.Abstracts;
+using AnkhMorporkApp.Properties;
 using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
@@ -9,11 +9,10 @@ namespace AnkhMorporkApp
     {
         public List<Assassin> Assassins;
 
-        public GuildOfAssassins(IFileService fileService)
+        public GuildOfAssassins()
         {
-            try
-            {
-                var assassinsData = fileService.GetText("listOfAssassins.json");
+            try{
+                var assassinsData = System.Text.Encoding.Default.GetString(Resources.listOfAssassins);
                 Assassins = JsonConvert.DeserializeObject<List<Assassin>>(assassinsData);
             }
             catch (Exception exception)

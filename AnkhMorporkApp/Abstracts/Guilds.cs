@@ -2,9 +2,6 @@
 {
     public abstract class Guilds <T>
     {
-        public Guilds()
-        {
-        }
-        public abstract void InteractionWithPlayer(Player player, T guildMember);
+       public abstract void InteractionWithPlayer(Player player, T guildMember);
     }
 }

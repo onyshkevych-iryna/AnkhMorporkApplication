@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AnkhMorporkApp.Properties;
 using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
@@ -12,8 +13,7 @@ namespace AnkhMorporkApp
         {
             try
             {
-                FileService fileService = new FileService();
-                var beggarsData = fileService.GetText("listOfBeggars.json");
+                var beggarsData = System.Text.Encoding.Default.GetString(Resources.listOfBeggars);
                 Beggars = JsonConvert.DeserializeObject<Dictionary<int, Beggar>>(beggarsData);
             }
             catch (Exception exception)

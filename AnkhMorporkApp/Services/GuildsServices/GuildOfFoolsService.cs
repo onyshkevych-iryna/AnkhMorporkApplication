@@ -5,12 +5,6 @@ namespace AnkhMorporkApp.Services.GuildsServices
 {
     public class GuildOfFoolsService:IGuildOfFoolsService
     {
-        public IFileService File;
-        public GuildOfFoolsService()
-        {
-            File = new FileService();
-        }
-
         public void FoolMeetsPlayer(Random rnd, Player player)
         {
             GuildOfFools guildOfFools = new GuildOfFools();

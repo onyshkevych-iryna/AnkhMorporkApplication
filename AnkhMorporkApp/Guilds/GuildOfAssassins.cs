@@ -27,13 +27,13 @@ namespace AnkhMorporkApp
             string input = null;
             decimal amount = 0;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Someone wants to kill you!\nEnter 's' to skip. Or enter sum of money to make a contract with an assassin.");
+            Console.WriteLine("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip");
             Console.ForegroundColor = ConsoleColor.White;
             var validInput = false;
             do
             {
                 input = Console.ReadLine();
-                if (input == "s")
+                if (input == "no")
                 {
                     player.Skip(assassins);
                     return;

@@ -26,18 +26,18 @@ namespace AnkhMorporkApp
         {
             string input = null;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"You came across a friend!\nEnter \'s\' to skip or \'j\' to join their offer to work as {fool.Practice}. You'll earn {fool.Fee} AM$.");
+            Console.WriteLine($"You came across a friend!\nTo join their offer to work as {fool.Practice} and earn {fool.Fee} AM$ - enter \"yes\". To skip - enter \"no\".");
             Console.ForegroundColor = ConsoleColor.White;
             var validInput = false;
             do
             {
                 input = Console.ReadLine();
-                if (input == "s")
+                if (input == "no")
                 {
                     player.Skip(fool);
                     validInput = true;
                 }
-                else if (input == "j")
+                else if (input == "yes")
                     player.GetMoney(fool.Fee, ref validInput);
                 else
                     Console.WriteLine("Invalid input! Please, try again:");

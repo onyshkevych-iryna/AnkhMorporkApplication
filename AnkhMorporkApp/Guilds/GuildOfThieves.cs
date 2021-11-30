@@ -18,7 +18,7 @@ namespace AnkhMorporkApp
             string input = null;
             decimal amount = 0;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"You came across a thieve!\nEnter \'s\' to skip. Or give {thief.Fee} AM$.");
+            Console.WriteLine($"You came across a thieve!\nTo pay him {thief.Fee} AM$ - enter \"yes\". To skip - enter \"no");
             Console.ForegroundColor = ConsoleColor.White;
             if (player.IsOutOfMoney(thief.Fee))
                 return;
@@ -26,23 +26,19 @@ namespace AnkhMorporkApp
             do
             {
                 input = Console.ReadLine();
-                if (input == "s")
+                if (input == "no")
                 {
                     player.Skip(thief);
                     return;
                 }
-                if (!Double.TryParse(input, out double result))
+                if (input == "yes")
+                {
+                    player.GiveMoney(thief.Fee, ref validInput);
+                }
+                else
                 {
                     Console.WriteLine("Incorrect data! Please, try again:");
-                    continue;
                 }
-                amount = Decimal.Parse(input);
-                if (amount != thief.Fee)
-                    Console.WriteLine($"The amount isn't equal to {thief.Fee}! Please, try again:");
-                else if(!player.EnteredSumIsCorrect(amount))
-                    return;
-                else 
-                    player.GiveMoney(amount, ref validInput);
             } while (!validInput);
         }
     }

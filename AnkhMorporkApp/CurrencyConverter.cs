@@ -1,4 +1,6 @@
-﻿namespace AnkhMorporkApp
+﻿using System;
+
+namespace AnkhMorporkApp
 {
     public static class CurrencyConverter
     {
@@ -6,9 +8,9 @@
         {
             if (AMDollar >= 1)
             {
-                return $"{AMDollar} AM$";
+                return $"{(AMDollar)} AM$";
             }
-            return $"{AMDollar*100} pennies";
+            return $"{(int)(AMDollar*100)} pennies";
         }
     }
 }

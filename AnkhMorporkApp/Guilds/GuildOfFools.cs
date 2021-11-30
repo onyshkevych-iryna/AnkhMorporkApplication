@@ -13,8 +13,8 @@ namespace AnkhMorporkApp
         {
             try
             {
-                var assassinsData = System.Text.Encoding.Default.GetString(Resources.listOfAssassins);
-                Fools = JsonConvert.DeserializeObject<Dictionary<int, Fool>>(assassinsData);
+                var foolsData = System.Text.Encoding.Default.GetString(Resources.listOfFools);
+                Fools = JsonConvert.DeserializeObject<Dictionary<int, Fool>>(foolsData);
             }
             catch (Exception exception)
             {

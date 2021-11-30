@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using AnkhMorporkApp.Properties;
 using Newtonsoft.Json;
 
@@ -42,20 +43,17 @@ namespace AnkhMorporkApp
                 {
                     continue;
                 }
-                var contractWasMade = false;
-                foreach (Assassin ass in assassins)
+                var assassin = assassins
+                    .Select(ass => ass)
+                    .FirstOrDefault(ass => ass.MinReward <= amount && ass.MaxReward >= amount && !ass.IsOccupied);
+                if (assassin is not null)
                 {
-                    if (amount >= ass.MinReward && amount <= ass.MaxReward && (!ass.IsOccupied))
-                    {
-                        Console.WriteLine($"Assassin \"{ass.Name}\" made a contract with you!");
-                        player.GiveMoney(amount, ref validInput);
-                        contractWasMade = true;
-                        break;
-                    }
+                    Console.WriteLine($"Assassin \"{assassin.Name}\" made a contract with you!");
+                    player.GiveMoney(amount, ref validInput);
                 }
-                if (!contractWasMade)
+                else
                 {
-                    ConsoleColorChanger.ChangeColor("There is no opportunity to make a contract! Game is over",ConsoleColor.Red);
+                    ConsoleColorChanger.ChangeColor("There is no opportunity to make a contract! Game is over", ConsoleColor.Red);
                     player.IsAlive = false;
                     return;
                 }

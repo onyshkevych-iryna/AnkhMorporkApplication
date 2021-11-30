@@ -72,7 +72,7 @@ namespace AnkhMorporkApp.Tests
                 new Assassin("name", 11, 20, false)
             };
 
-            _player.Skip(assassins.GetType());
+            _player.Skip(typeof(Assassin));
 
             Assert.IsFalse(_player.IsAlive);
         }

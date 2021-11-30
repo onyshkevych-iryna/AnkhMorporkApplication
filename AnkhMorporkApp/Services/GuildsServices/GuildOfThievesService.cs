@@ -8,8 +8,8 @@ namespace AnkhMorporkApp.Services
         public void ThiefMeetsPlayer(Random rnd, Player player)
         {
             --GuildOfThieves.NumberOfThieves;
-            GuildOfThieves guildOfTheves = new GuildOfThieves();
-            Thief thieve = new Thief();
+            var guildOfTheves = new GuildOfThieves();
+            var thieve = new Thief();
             guildOfTheves.InteractionWithPlayer(player, thieve);
             if (player.IsAlive)
             {

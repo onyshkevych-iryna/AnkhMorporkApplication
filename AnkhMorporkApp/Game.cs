@@ -28,7 +28,7 @@ namespace AnkhMorporkApp
             Console.WriteLine(_player);
             while (_player.IsAlive)
             {
-                Random rnd = new Random();
+                var rnd = new Random();
                 var random = rnd.Next(0, _maxNumberOfGuilds);
                 try
                 {

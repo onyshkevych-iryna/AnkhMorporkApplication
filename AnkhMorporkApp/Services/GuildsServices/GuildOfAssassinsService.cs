@@ -7,7 +7,7 @@ namespace AnkhMorporkApp.Services
     {
         public void AssassinMeetsPlayer(Player player)
         {
-            GuildOfAssassins guildOfAssassins = new GuildOfAssassins();
+            var guildOfAssassins = new GuildOfAssassins();
             guildOfAssassins.InteractionWithPlayer(player, guildOfAssassins.Assassins);
             if (player.IsAlive)
             {

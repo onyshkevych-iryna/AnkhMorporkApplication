@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace AnkhMorporkApp
 {
@@ -59,7 +58,7 @@ namespace AnkhMorporkApp
         {
             switch (enemy)
             {
-                case var _ when (enemy.Equals(typeof(Thief))|| enemy.Equals(typeof(List<Assassin>))):
+                case var _ when (enemy.Equals(typeof(Thief))|| enemy.Equals(typeof(Assassin))):
                     IsAlive = false;
                     ConsoleColorChanger.ChangeColor("You're killed! Game is over.", ConsoleColor.Red);
                     break;

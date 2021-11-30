@@ -2,8 +2,8 @@
 {
     public class Fool 
     {
-        public string Practice { get; private set; }
-        public decimal Fee { get; private set; }
+        public string Practice { get; }
+        public decimal Fee { get; }
 
         public Fool(string practice, decimal fee)
         {

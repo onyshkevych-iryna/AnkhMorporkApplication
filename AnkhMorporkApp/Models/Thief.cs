@@ -2,6 +2,6 @@
 {
     public class Thief
     {
-        public decimal Fee { get; private set; } = 10;
+        public decimal Fee { get; } = 10;
     }
 }

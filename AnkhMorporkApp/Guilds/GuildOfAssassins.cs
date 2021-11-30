@@ -23,7 +23,6 @@ namespace AnkhMorporkApp
         
         public override void InteractionWithPlayer(Player player, List<Assassin> assassins)
         {
-            decimal amount;
             ConsoleColorChanger.ChangeColor("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.", ConsoleColor.Green);
             var validInput = false;
             do
@@ -31,10 +30,10 @@ namespace AnkhMorporkApp
                 var input = Console.ReadLine();
                 if (input == "no")
                 {
-                    player.Skip(assassins.GetType());
+                    player.Skip(typeof(Assassin));
                     return;
                 }
-                if (!Decimal.TryParse(input, out amount))
+                if (!Decimal.TryParse(input, out var amount))
                 {
                     Console.WriteLine("Incorrect data! Try again:");
                     continue;
@@ -54,7 +53,7 @@ namespace AnkhMorporkApp
                         break;
                     }
                 }
-                if (contractWasMade == false)
+                if (!contractWasMade)
                 {
                     ConsoleColorChanger.ChangeColor("There is no opportunity to make a contract! Game is over",ConsoleColor.Red);
                     player.IsAlive = false;

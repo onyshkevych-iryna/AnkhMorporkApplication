@@ -2,9 +2,13 @@
 {
     public static class CurrencyConverter
     {
-        public static decimal ConvertCurrency(decimal AMDollar)
+        public static string Convert(decimal AMDollar)
         {
-            return AMDollar * 100;
+            if (AMDollar >= 1)
+            {
+                return $"{AMDollar} AM$";
+            }
+            return $"{AMDollar*100} pennies";
         }
     }
 }

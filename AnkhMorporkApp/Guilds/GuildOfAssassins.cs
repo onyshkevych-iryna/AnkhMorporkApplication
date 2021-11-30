@@ -24,28 +24,26 @@ namespace AnkhMorporkApp
         
         public override void InteractionWithPlayer(Player player, List<Assassin> assassins)
         {
-            string input = null;
-            decimal amount = 0;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.");
-            Console.ForegroundColor = ConsoleColor.White;
+            decimal amount;
+            ConsoleColourChanger.ChangeColour("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.",ConsoleColor.Green);
             var validInput = false;
             do
             {
-                input = Console.ReadLine();
+                var input = Console.ReadLine();
                 if (input == "no")
                 {
                     player.Skip(assassins.GetType());
                     return;
                 }
-                if (!Double.TryParse(input, out double result))
+                if (!Decimal.TryParse(input, out amount))
                 {
                     Console.WriteLine("Incorrect data! Try again:");
                     continue;
                 }
-                amount = Decimal.Parse(input);
                 if (!player.EnteredSumIsCorrect(amount))
+                {
                     continue;
+                }
                 var contractWasMade = false;
                 foreach (Assassin ass in assassins)
                 {
@@ -59,9 +57,7 @@ namespace AnkhMorporkApp
                 }
                 if (contractWasMade == false)
                 {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("There is no opportunity to make a contract! Game is over");
-                    Console.ForegroundColor = ConsoleColor.White;
+                    ConsoleColourChanger.ChangeColour("There is no opportunity to make a contract! Game is over",ConsoleColor.Red);
                     player.IsAlive = false;
                     return;
                 }

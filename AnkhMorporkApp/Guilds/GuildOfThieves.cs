@@ -15,24 +15,24 @@ namespace AnkhMorporkApp
 
         public override void InteractionWithPlayer(Player player, Thief thief)
         {
-            string input = null;
-            decimal amount = 0;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"You came across a thieve!\nTo pay him {thief.Fee} AM$ - enter \"yes\". To skip - enter \"no\".");
-            Console.ForegroundColor = ConsoleColor.White;
+            ConsoleColourChanger.ChangeColour($"You came across a thieve!\nTo pay him {CurrencyConverter.Convert(thief.Fee)} - enter \"yes\". To skip - enter \"no\".",ConsoleColor.Green);
             if (player.IsOutOfMoney(thief.Fee))
+            {
                 return;
+            }
             var validInput = false;
             do
             {
-                input = Console.ReadLine();
-                if (input == "no")
+                var input = Console.ReadLine();
+                if (input == "yes")
+                {
+                    player.GiveMoney(thief.Fee, ref validInput);
+                }
+                else if (input == "no")
                 {
                     player.Skip(thief.GetType());
                     return;
                 }
-                if (input == "yes")
-                    player.GiveMoney(thief.Fee, ref validInput);
                 else
                 {
                     Console.WriteLine("Incorrect data! Please, try again:");

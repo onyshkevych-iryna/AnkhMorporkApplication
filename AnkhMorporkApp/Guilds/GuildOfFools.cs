@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
@@ -24,28 +25,25 @@ namespace AnkhMorporkApp
 
         public override void InteractionWithPlayer(Player player, Fool fool)
         {
-            string input = null;
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write($"You came across a friend!\nTo join their offer to work as {fool.Practice}");
-            if (fool.Fee<1)
-                Console.Write($" and earn {CurrencyConverter.ConvertCurrency(fool.Fee)} pennies - enter \"yes\".");
-            else
-                Console.Write($" and earn {fool.Fee} AM$ - enter \"yes\".");
-            Console.WriteLine(" To skip - enter \"no\".");
-            Console.ForegroundColor = ConsoleColor.White;
+            ConsoleColourChanger.ChangeColour($"You came across a friend!\nTo join their offer to work as {fool.Practice} " +
+                                                     $"and earn {CurrencyConverter.Convert(fool.Fee)} - enter \"yes\". To skip - enter \"no\".",ConsoleColor.Green);
             var validInput = false;
             do
             {
-                input = Console.ReadLine();
-                if (input == "no")
+                var input = Console.ReadLine();
+                if (input == "yes")
+                {
+                    player.GetMoney(fool.Fee, ref validInput);
+                }
+                else if (input == "no")
                 {
                     player.Skip(fool.GetType());
                     validInput = true;
                 }
-                else if (input == "yes")
-                    player.GetMoney(fool.Fee, ref validInput);
                 else
+                {
                     Console.WriteLine("Invalid input! Please, try again:");
+                }
             } while (!validInput);
         }
     }

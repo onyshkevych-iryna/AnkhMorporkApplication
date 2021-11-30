@@ -17,73 +17,65 @@ namespace AnkhMorporkApp
             this.Balance = balance;
         }
 
-        public void GetMoney(decimal amount, ref bool validoutput)
+        public void GetMoney(decimal amount, ref bool validOutput)
         {
             this.Balance += amount;
-            validoutput = true;
+            validOutput = true;
         }
 
-        public void GiveMoney(decimal amount, ref bool validoutput)
+        public void GiveMoney(decimal amount, ref bool validOutput)
         {
             this.Balance -= amount;
-            validoutput = true;
+            validOutput = true;
             if (this.Balance <= 0)
             {
                 IsAlive = false;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You don't have enough money! Game is over.");
-                Console.ForegroundColor = ConsoleColor.White;
+                ConsoleColourChanger.ChangeColour("You don't have enough money! Game is over.",ConsoleColor.Red);
             }
         }
 
         public bool IsOutOfMoney(decimal input)
         {
-            if (Balance < input)
+            if (Balance > input)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You don't have enough money! Game is over.");
-                Console.ForegroundColor = ConsoleColor.White;
-                IsAlive = false;
-                return true;
+                return false;
             }
-            return false;
+            ConsoleColourChanger.ChangeColour("You don't have enough money! Game is over.",ConsoleColor.Red);
+            IsAlive = false;
+            return true;
         }
 
         public bool EnteredSumIsCorrect(decimal input)
         {
-            if (Balance < input)
+            if (Balance > input)
             {
-                Console.WriteLine("You don't have that sum of money! Please, try again:");
-                return false;
+                return true;
             }
-            return true;
+            Console.WriteLine("You don't have that sum of money! Please, try again:");
+            return false;
         }
 
         public void Skip(Type enemy)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
             switch (enemy)
             {
                 case var _ when (enemy.Equals(typeof(Thief))|| enemy.Equals(typeof(List<Assassin>))):
                     IsAlive = false;
-                    Console.WriteLine("You're killed! Game is over.");
+                    ConsoleColourChanger.ChangeColour("You're killed! Game is over.", ConsoleColor.Red);
                     break;
                 case var _ when enemy.Equals(typeof(Beggar)):
                     IsAlive = false;
-                    Console.WriteLine("You're chased to death! Game is over.");
+                    ConsoleColourChanger.ChangeColour("You're chased to death! Game is over.",ConsoleColor.Red);
                     break;
                 case var _ when enemy.Equals(typeof(Fool)):
-                    Console.WriteLine("You rejected the offer.");
+                    ConsoleColourChanger.ChangeColour("You rejected the offer.",ConsoleColor.Red);
                     break;
             }
-            Console.ForegroundColor = ConsoleColor.White;
         }
 
         public override string ToString()
         {
-            if(this.Balance>=1)
-                return $"\nYour current balance: {this.Balance} AM$ \n"; 
-            return $"\nYour current balance: {CurrencyConverter.ConvertCurrency(this.Balance)} pennies\n";
+            return $"\nYour current balance: {CurrencyConverter.Convert(this.Balance)}\n";
         }
     }
 }

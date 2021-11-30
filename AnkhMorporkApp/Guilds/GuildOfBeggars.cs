@@ -24,44 +24,37 @@ namespace AnkhMorporkApp
 
         public override void InteractionWithPlayer(Player player, Beggar beggar)
         {
-            string input = null;
-            decimal amount = 0;
             if (beggar.Fee != 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"You came across a beggar!");
-                if (beggar.Fee<1)
-                    Console.Write($"To pay him {CurrencyConverter.ConvertCurrency(beggar.Fee)} pennies - enter \"yes\".");
-                else
-                    Console.Write($"To pay him {beggar.Fee} AM$ - enter \"yes\".");
+                Console.WriteLine($"You came across a beggar! To pay him {CurrencyConverter.Convert(beggar.Fee)} - enter \"yes\".");
                 Console.WriteLine(" To skip - enter \"no\".");
                 Console.ForegroundColor = ConsoleColor.White;
                 if (player.IsOutOfMoney(beggar.Fee))
+                {
                     return;
+                }
                 var validInput = false;
                 do
                 {
-                    input = Console.ReadLine();
-                    if (input == "no")
+                    var input = Console.ReadLine();
+                    if (input == "yes")
+                    {
+                        player.GiveMoney(beggar.Fee, ref validInput);
+                    }
+                    else if (input == "no")
                     {
                         player.Skip(beggar.GetType());
                         return;
                     }
-                    if (input == "yes")
-                        player.GiveMoney(beggar.Fee, ref validInput);
                     else
                     {
                         Console.WriteLine("Incorrect data! Please, try again:");
-                        continue;
                     }
                 } while (!validInput);
             }
             else
-            {
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("You met people with placards saying: \"Why lie? I need a beer\".");
-                Console.ForegroundColor = ConsoleColor.White;
-            }
+                ConsoleColourChanger.ChangeColour("You met people with placards saying: \"Why lie? I need a beer\".", ConsoleColor.Yellow);
         }
     }
 }

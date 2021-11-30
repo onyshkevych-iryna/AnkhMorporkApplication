@@ -30,7 +30,7 @@ namespace AnkhMorporkApp
             if (this.Balance <= 0)
             {
                 IsAlive = false;
-                ConsoleColourChanger.ChangeColour("You don't have enough money! Game is over.",ConsoleColor.Red);
+                ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.",ConsoleColor.Red);
             }
         }
 
@@ -40,7 +40,7 @@ namespace AnkhMorporkApp
             {
                 return false;
             }
-            ConsoleColourChanger.ChangeColour("You don't have enough money! Game is over.",ConsoleColor.Red);
+            ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.",ConsoleColor.Red);
             IsAlive = false;
             return true;
         }
@@ -61,14 +61,14 @@ namespace AnkhMorporkApp
             {
                 case var _ when (enemy.Equals(typeof(Thief))|| enemy.Equals(typeof(List<Assassin>))):
                     IsAlive = false;
-                    ConsoleColourChanger.ChangeColour("You're killed! Game is over.", ConsoleColor.Red);
+                    ConsoleColorChanger.ChangeColor("You're killed! Game is over.", ConsoleColor.Red);
                     break;
                 case var _ when enemy.Equals(typeof(Beggar)):
                     IsAlive = false;
-                    ConsoleColourChanger.ChangeColour("You're chased to death! Game is over.",ConsoleColor.Red);
+                    ConsoleColorChanger.ChangeColor("You're chased to death! Game is over.",ConsoleColor.Red);
                     break;
                 case var _ when enemy.Equals(typeof(Fool)):
-                    ConsoleColourChanger.ChangeColour("You rejected the offer.",ConsoleColor.Red);
+                    ConsoleColorChanger.ChangeColor("You rejected the offer.",ConsoleColor.Red);
                     break;
             }
         }

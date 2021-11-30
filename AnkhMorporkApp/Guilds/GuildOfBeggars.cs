@@ -26,10 +26,7 @@ namespace AnkhMorporkApp
         {
             if (beggar.Fee != 0)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"You came across a beggar! To pay him {CurrencyConverter.Convert(beggar.Fee)} - enter \"yes\".");
-                Console.WriteLine(" To skip - enter \"no\".");
-                Console.ForegroundColor = ConsoleColor.White;
+                ConsoleColorChanger.ChangeColor($"You came across a beggar! To pay him {CurrencyConverter.Convert(beggar.Fee)} - enter \"yes\". To skip - enter \"no\".", ConsoleColor.Green);
                 if (player.IsOutOfMoney(beggar.Fee))
                 {
                     return;
@@ -54,7 +51,7 @@ namespace AnkhMorporkApp
                 } while (!validInput);
             }
             else
-                ConsoleColourChanger.ChangeColour("You met people with placards saying: \"Why lie? I need a beer\".", ConsoleColor.Yellow);
+                ConsoleColorChanger.ChangeColor("You met people with placards saying: \"Why lie? I need a beer\".", ConsoleColor.Yellow);
         }
     }
 }

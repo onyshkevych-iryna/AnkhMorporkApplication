@@ -15,7 +15,7 @@ namespace AnkhMorporkApp
 
         public override void InteractionWithPlayer(Player player, Thief thief)
         {
-            ConsoleColourChanger.ChangeColour($"You came across a thieve!\nTo pay him {CurrencyConverter.Convert(thief.Fee)} - enter \"yes\". To skip - enter \"no\".",ConsoleColor.Green);
+            ConsoleColorChanger.ChangeColor($"You came across a thieve!\nTo pay him {CurrencyConverter.Convert(thief.Fee)} - enter \"yes\". To skip - enter \"no\".",ConsoleColor.Green);
             if (player.IsOutOfMoney(thief.Fee))
             {
                 return;

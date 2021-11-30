@@ -25,7 +25,7 @@ namespace AnkhMorporkApp
         public override void InteractionWithPlayer(Player player, List<Assassin> assassins)
         {
             decimal amount;
-            ConsoleColourChanger.ChangeColour("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.",ConsoleColor.Green);
+            ConsoleColorChanger.ChangeColor("Someone wants to kill you!\nEnter sum of money to make a contract with an assassin. Or enter \"no\" to skip.",ConsoleColor.Green);
             var validInput = false;
             do
             {
@@ -57,7 +57,7 @@ namespace AnkhMorporkApp
                 }
                 if (contractWasMade == false)
                 {
-                    ConsoleColourChanger.ChangeColour("There is no opportunity to make a contract! Game is over",ConsoleColor.Red);
+                    ConsoleColorChanger.ChangeColor("There is no opportunity to make a contract! Game is over",ConsoleColor.Red);
                     player.IsAlive = false;
                     return;
                 }

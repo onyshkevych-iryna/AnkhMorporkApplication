@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 
 namespace AnkhMorporkApp
@@ -25,7 +24,7 @@ namespace AnkhMorporkApp
 
         public override void InteractionWithPlayer(Player player, Fool fool)
         {
-            ConsoleColourChanger.ChangeColour($"You came across a friend!\nTo join their offer to work as {fool.Practice} " +
+            ConsoleColorChanger.ChangeColor($"You came across a friend!\nTo join their offer to work as {fool.Practice} " +
                                                      $"and earn {CurrencyConverter.Convert(fool.Fee)} - enter \"yes\". To skip - enter \"no\".",ConsoleColor.Green);
             var validInput = false;
             do

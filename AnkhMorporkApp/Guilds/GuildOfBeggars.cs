@@ -7,7 +7,7 @@ namespace AnkhMorporkApp
     public class GuildOfBeggars : Guilds<Beggar>
     {
         public Dictionary<int, Beggar> Beggars;
-        
+
         public GuildOfBeggars()
         {
             try
@@ -29,7 +29,12 @@ namespace AnkhMorporkApp
             if (beggar.Fee != 0)
             {
                 Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($"You came across a beggar!\nTo pay him {beggar.Fee} AM$ - enter \"yes\". To skip - enter \"no\".");
+                Console.WriteLine($"You came across a beggar!");
+                if (beggar.Fee<1)
+                    Console.Write($"To pay him {CurrencyConverter.ConvertCurrency(beggar.Fee)} pennies - enter \"yes\".");
+                else
+                    Console.Write($"To pay him {beggar.Fee} AM$ - enter \"yes\".");
+                Console.WriteLine(" To skip - enter \"no\".");
                 Console.ForegroundColor = ConsoleColor.White;
                 if (player.IsOutOfMoney(beggar.Fee))
                     return;

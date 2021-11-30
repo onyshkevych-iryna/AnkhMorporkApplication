@@ -18,7 +18,7 @@ namespace AnkhMorporkApp
             string input = null;
             decimal amount = 0;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"You came across a thieve!\nTo pay him {thief.Fee} AM$ - enter \"yes\". To skip - enter \"no");
+            Console.WriteLine($"You came across a thieve!\nTo pay him {thief.Fee} AM$ - enter \"yes\". To skip - enter \"no\".");
             Console.ForegroundColor = ConsoleColor.White;
             if (player.IsOutOfMoney(thief.Fee))
                 return;

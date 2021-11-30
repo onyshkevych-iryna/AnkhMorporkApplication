@@ -26,7 +26,12 @@ namespace AnkhMorporkApp
         {
             string input = null;
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"You came across a friend!\nTo join their offer to work as {fool.Practice} and earn {fool.Fee} AM$ - enter \"yes\". To skip - enter \"no\".");
+            Console.Write($"You came across a friend!\nTo join their offer to work as {fool.Practice}");
+            if (fool.Fee<1)
+                Console.Write($" and earn {CurrencyConverter.ConvertCurrency(fool.Fee)} pennies - enter \"yes\".");
+            else
+                Console.Write($" and earn {fool.Fee} AM$ - enter \"yes\".");
+            Console.WriteLine(" To skip - enter \"no\".");
             Console.ForegroundColor = ConsoleColor.White;
             var validInput = false;
             do

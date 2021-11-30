@@ -81,7 +81,9 @@ namespace AnkhMorporkApp
 
         public override string ToString()
         {
-            return $"\nYour current balance: {this.Balance}\n";
+            if(this.Balance>=1)
+                return $"\nYour current balance: {this.Balance} AM$ \n"; 
+            return $"\nYour current balance: {CurrencyConverter.ConvertCurrency(this.Balance)} pennies\n";
         }
     }
 }

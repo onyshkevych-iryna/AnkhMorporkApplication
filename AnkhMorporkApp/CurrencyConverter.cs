@@ -1,16 +1,10 @@
-﻿using System;
-
-namespace AnkhMorporkApp
+﻿namespace AnkhMorporkApp
 {
     public static class CurrencyConverter
     {
         public static string Convert(decimal AMDollar)
         {
-            if (AMDollar >= 1)
-            {
-                return $"{(AMDollar)} AM$";
-            }
-            return $"{(int)(AMDollar*100)} pennies";
+            return AMDollar >= 1 ? $"{(AMDollar)} AM$" : $"{(int) (AMDollar * 100)} pennies";
         }
     }
 }

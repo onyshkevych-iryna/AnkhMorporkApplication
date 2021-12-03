@@ -29,7 +29,7 @@ namespace AnkhMorporkApp
             if (this.Balance <= 0)
             {
                 IsAlive = false;
-                ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.",ConsoleColor.Red);
+                ConsoleColorChanger.ChangeColor("You don't have enough money! Game is over.", ConsoleColor.Red);
             }
         }
 

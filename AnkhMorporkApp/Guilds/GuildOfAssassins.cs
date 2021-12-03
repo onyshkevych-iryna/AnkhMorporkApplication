@@ -44,8 +44,7 @@ namespace AnkhMorporkApp
                     continue;
                 }
                 var assassin = assassins
-                    .Select(ass => ass)
-                    .FirstOrDefault(ass => ass.MinReward <= amount && ass.MaxReward >= amount && !ass.IsOccupied);
+                    .FirstOrDefault(assassin => assassin.MinReward <= amount && assassin.MaxReward >= amount && !assassin.IsOccupied);
                 if (assassin is not null)
                 {
                     Console.WriteLine($"Assassin \"{assassin.Name}\" made a contract with you!");

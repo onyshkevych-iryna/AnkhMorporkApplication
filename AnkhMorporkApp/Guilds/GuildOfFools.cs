@@ -30,18 +30,18 @@ namespace AnkhMorporkApp
             do
             {
                 var input = Console.ReadLine();
-                if (input == "yes")
+                switch (input)
                 {
-                    player.GetMoney(fool.Fee, ref validInput);
-                }
-                else if (input == "no")
-                {
-                    player.Skip(fool.GetType());
-                    validInput = true;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input! Please, try again:");
+                    case "yes":
+                        player.GetMoney(fool.Fee, ref validInput);
+                        break;
+                    case "no":
+                        player.Skip(fool.GetType());
+                        validInput = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid input! Please, try again:");
+                        break;
                 }
             } while (!validInput);
         }
